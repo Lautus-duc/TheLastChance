@@ -1,6 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-[CreateAssetMenu(fileName = "BiomePreset", menuName = "New_BiomePreset")]
+
+[CreateAssetMenu(fileName = "BiomePreset", menuName = "New BiomePreset")]
 public class BiomePreset : ScriptableObject
 {
     public Sprite[] tiles;
