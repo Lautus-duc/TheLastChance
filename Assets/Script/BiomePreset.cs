@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-[CreateAssetMenu(fileName = "BiomePreset", menuName = "New BiomePreset")]
+[CreateAssetMenu(fileName = "BiomePreset", menuName = "MyGame/BiomePreset")]
 public class BiomePreset : ScriptableObject
 {
     public Sprite[] tiles;
@@ -12,12 +12,13 @@ public class BiomePreset : ScriptableObject
     public float minMoisture;
     public float minHeat;
 
-    public Sprite GetTleSprite ()
+    public Sprite GetTileSprite()
     {
-        return tiles[Random.Range(0, tiles.Length)];
+        int l = Random.Range(0, tiles.Length-1);
+        return tiles[l];
     }
 
-    public bool MatchCondition (float height, float moisture, float heat)
+    public bool MatchCondition(float height, float moisture, float heat)
     {
         return height >= minHeight && moisture >= minMoisture && heat >= minHeat;
     }

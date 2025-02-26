@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003d2b3569d3ad54e955e0be0e93169c, type: 3}
+  m_Name: Blueberry
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 1101075920, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: -1508789861, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: 298313554, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: 294185852, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: -720716574, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: -485125501, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: 792556649, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  - {fileID: -1420594084, guid: d701155203fe2f143a7f8112b9df97d2, type: 3}
+  minHeight: 0.2
+  minMoisture: 0
+  minHeat: 0.5
+  typeOfBiome: B
