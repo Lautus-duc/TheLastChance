@@ -50,14 +50,11 @@ public class GameManager : MonoBehaviour
 
     private void InstantiatePlayer()
     {
-        //canvasInstanciate = Instantiate(canvas);
         playerInstanciate = Instantiate(playerPrefab, SpawnPoint.position, Quaternion.identity);
 
         playerFightScript = playerInstanciate.GetComponent<PlayerFight>();
 
         playerFightScript.gameManager = this;
-        //playerFightScript.ownCanvas = canvasInstanciate;
-        //playerFightScript.HP_Barre_Script = canvasInstanciate.gameObject.GetComponentsInChildren<PlayerHealthBarre>()[0];
     }
 
     public void PlayerDeath()

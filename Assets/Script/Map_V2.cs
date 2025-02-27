@@ -26,6 +26,15 @@ public class Map_V2 : MonoBehaviour
     [Header("Heat Map")]
     public Wave[] heatWaves;
     private float[,] heatMap;
+    [Header("Vegetal Map")]
+    public Wave[] vegetalWaves;
+    public float[,] vegetalMap;
+
+
+
+
+
+    
 
     void GenerateMap ()
     {
@@ -35,16 +44,25 @@ public class Map_V2 : MonoBehaviour
         moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset);
         // heat map
         heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset);
+        // vegetal map
+        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset);
 
         for(int x = 0; x < width; ++x)
         {
             for(int y = 0; y < height; ++y)
             {
                 //-----Using the TileMapGenerate-----//
-                Tile newTile = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]).GetTileSprite();
-                tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2));
+                (BiomePreset_V2 biomeP,bool isCol) = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]);
+                Tile newTile = biomeP.GetTileSprite();
+                tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),isCol);
 
-                tileMapGenerate.GetMap(x-(height/2),y-(height/2));
+                int vegNumber = biomeP.IsVegetalise(vegetalMap[x,y]);
+
+                if(vegNumber!=-1){
+                    Transform vegPrefab = biomeP.GetVegetalGO().GetComponent<Transform>();
+                    Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f+4.4f, (y-(height/2))*1.16f+5f, 0), Quaternion.identity);
+                    VegInstanciate.GetComponent<SpriteRenderer>().sortingOrder = height-y;
+                }
             }
         }
         tileMapGenerate.tilemap.RefreshAllTiles();
@@ -53,10 +71,12 @@ public class Map_V2 : MonoBehaviour
     void Start ()
     {
         tileMapGenerate = GetComponent<TileMapGenerate_V2>();
+        TilemapRenderer TRendOfTileMap = GetComponent<TilemapRenderer>();
+        TRendOfTileMap.sortingOrder = -height;
         GenerateMap();
     }
 
-    BiomePreset_V2 GetBiome (float height, float moisture, float heat)
+    (BiomePreset_V2,bool) GetBiome (float height, float moisture, float heat)
     {
         List<BiomeTempData_V2> biomeTemp = new List<BiomeTempData_V2>();
         foreach(BiomePreset_V2 biome in biomes)
@@ -91,7 +111,9 @@ public class Map_V2 : MonoBehaviour
         {
             biomeToReturn = biomes[0];
         }
-        return biomeToReturn;
+
+        bool isColider = biomeToReturn.IsCollidered;
+        return (biomeToReturn,isColider);
     }
 
 }

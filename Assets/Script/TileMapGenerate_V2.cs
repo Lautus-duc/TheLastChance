@@ -6,20 +6,23 @@ using UnityEngine.Tilemaps;
 public class TileMapGenerate_V2 : MonoBehaviour
 {
     public Tilemap tilemap;
-    public TilemapCollider2D tilemapCollider;
+    public Tilemap tilemap2;
+    public TilemapCollider2D tilemapCollider2;
 
 
     void Start()
     {
         tilemap = GetComponent<Tilemap>();
-        tilemapCollider = tilemap.GetComponent<TilemapCollider2D>();
     }
 
 
-    public void SetMap(Tile tile, int x, int y){
+    public void SetMap(Tile tile, int x, int y,bool isCol){
     Vector3Int position = new Vector3Int(x, y, 0);
+    if (isCol){
+        tilemap2.SetTile(position, tile);
+    }
     tilemap.SetTile(position, tile);
-    Debug.Log(tilemap.GetTile(position));
+
     }
 
 
@@ -27,11 +30,6 @@ public class TileMapGenerate_V2 : MonoBehaviour
         Vector3Int position = new Vector3Int(x, y, 0);
         Tile t = tilemap.GetTile<Tile>(position);
         return t;
-    }
-
-
-    public void IsCollider (int x, int y, bool actived){
-        tilemapCollider.enabled = actived;
     }
 }
 

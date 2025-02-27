@@ -16,7 +16,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d782fb35c113eaf41b1feca621e08cd9, type: 2}
   - {fileID: 11400000, guid: d7a8fa189eff4694da38550a38f5ed10, type: 2}
   - {fileID: 11400000, guid: a70944e4cbbf6aa4e821b637ec1b9f8a, type: 2}
+  VegetalsGOs: []
   minHeight: 0
   minMoisture: 0
   minHeat: 0
+  minVegetal: 0
+  numberOfTheVege: -1
   IsCollidered: 1
