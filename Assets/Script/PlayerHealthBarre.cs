@@ -13,7 +13,6 @@ public class PlayerHealthBarre : CanvaMain
     public float HeightBarre_PV= 100f;
     public void ChangeBarrePV(float pv, float pvMax){
         
-        Debug.Log("CH  B  PV");
         float valueActual = pv/pvMax;
         PV_BarreTransform.localScale = new Vector3(valueActual,PV_BarreTransform.localScale.y,PV_BarreTransform.localScale.z);
 
