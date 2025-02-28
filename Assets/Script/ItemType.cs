@@ -4,6 +4,6 @@ public enum ItemType
 {
     Food,
     Defence,
-    CrafObject,
-    CrafedObject
+    CraftObject,
+    CraftedObject
 }
