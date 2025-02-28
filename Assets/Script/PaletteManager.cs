@@ -1,4 +1,6 @@
-namespace DefaultNamespace;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PaletteManager : MonoBehaviour
 {
@@ -17,6 +19,5 @@ public class PaletteManager : MonoBehaviour
     private void DisplayItem(InventoryItem item)
     {
         Debug.Log("Displaying item: " + item.Name);
-        // Implement logic to show the item in the game world
     }
 }

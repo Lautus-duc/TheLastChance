@@ -1,4 +1,4 @@
-namespace DefaultNamespace;
+using UnityEngine;
 
 public class Meal : Food
 {
