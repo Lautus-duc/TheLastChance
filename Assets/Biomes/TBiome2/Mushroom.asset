@@ -27,6 +27,6 @@ MonoBehaviour:
   minHeight: 0.37
   minMoisture: 0.75
   minHeat: 0
-  minVegetal: 0.5
+  minVegetal: 0.8
   numberOfTheVege: 5
   IsCollidered: 0

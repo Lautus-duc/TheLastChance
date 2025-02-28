@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 52cff1bc66c25f24d98586e22ffe5347
+guid: 7bd17df5d0269ee41a78a9f5651fa6dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4503911374534755105
-    second: veg1_1_0
+      213: -1738538732819513975
+    second: FC_4_0
+  - first:
+      213: 8121323920701154755
+    second: FC_4_1
+  - first:
+      213: -344372152078414741
+    second: FC_4_2
+  - first:
+      213: 2249039178875960268
+    second: FC_4_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: veg1_1_0
+      name: FC_4_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 42
-        width: 343
-        height: 250
+        x: 44
+        y: 220
+        width: 8
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdcb305b774ee71c0800000000000000
-      internalID: -4503911374534755105
+      spriteID: 98df802db387fd7e0800000000000000
+      internalID: -1738538732819513975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FC_4_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 226
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c56647c31db4b070800000000000000
+      internalID: 8121323920701154755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FC_4_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 14
+        width: 164
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c44dc2a5b883bf0800000000000000
+      internalID: -344372152078414741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FC_4_3
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 207
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb76de9731363f10800000000000000
+      internalID: 2249039178875960268
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      veg1_1_0: -4503911374534755105
+      FC_4_0: -1738538732819513975
+      FC_4_1: 8121323920701154755
+      FC_4_2: -344372152078414741
+      FC_4_3: 2249039178875960268
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

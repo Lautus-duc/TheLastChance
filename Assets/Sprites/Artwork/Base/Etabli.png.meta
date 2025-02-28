@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52cff1bc66c25f24d98586e22ffe5347
+guid: 1d9a74f01c3062845880d242e9a4584c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4503911374534755105
-    second: veg1_1_0
+      213: 1038917219782831144
+    second: Etabli_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: veg1_1_0
+      name: Etabli_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 42
-        width: 343
-        height: 250
+        x: 31
+        y: 5
+        width: 184
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdcb305b774ee71c0800000000000000
-      internalID: -4503911374534755105
+      spriteID: 82c213cf4b9fa6e00800000000000000
+      internalID: 1038917219782831144
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      veg1_1_0: -4503911374534755105
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -49761,8 +49761,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e2cc6aa1f8468c54c889aa1bbe8663c9, type: 2}
   - {fileID: 11400000, guid: f86a5970164a7a243bf507775f88410d, type: 2}
   - {fileID: 11400000, guid: d06bfbbeca9acae43aa27d4817ffa1a3, type: 2}
-  tilePrefab: {fileID: 1658497098786634310, guid: 7cd2362b9521fac4381b1c661ce675d3, type: 3}
-  tileMapGenerate: {fileID: 455345211}
+  baseBiome: {fileID: 11400000, guid: e65422fa0c5dd104eb3a323f23b4bc8a, type: 2}
+  firstBiome: {fileID: 11400000, guid: d06bfbbeca9acae43aa27d4817ffa1a3, type: 2}
   width: 300
   height: 300
   scale: 1
@@ -49789,6 +49789,11 @@ MonoBehaviour:
   - seed: 13
     frequency: 0.2
     amplitude: 0.9
+  campFire: {fileID: 564671864771966886, guid: 5d0c970634e9b50458277ba8dc0dfe17, type: 3}
+  kitchen: {fileID: 7754950763092653424, guid: 1f4b340bccdc64840a2301f612d633e8, type: 3}
+  crafter: {fileID: 3476572105908717408, guid: 9a356234950d28d4fb4845f11ebd5b4d, type: 3}
+  tilePrefab: {fileID: 1658497098786634310, guid: 7cd2362b9521fac4381b1c661ce675d3, type: 3}
+  tileMapGenerate: {fileID: 455345211}
 --- !u!114 &466698657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54816,7 +54821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraDistance: 18
+  CameraDistance: 14
   DeadZoneDepth: 0
   Composition:
     ScreenPosition: {x: 0, y: 0}
@@ -64496,7 +64501,7 @@ Transform:
   m_GameObject: {fileID: 2038545715}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.25, y: -11.22, z: 0.002253611}
+  m_LocalPosition: {x: -1, y: -1.11, z: 0.002253611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
