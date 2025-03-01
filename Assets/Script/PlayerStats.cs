@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private int numberOfThePlayer;
     
-    public GameManager gameManager;
+    public GameManagerInGame gameManager;
 
     public Canvas ownCanvas;
 

@@ -125,12 +125,12 @@ TextureImporter:
       name: Player_Run_Down_Up_2_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 152
-        width: 301
-        height: 707
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 2
+        width: 395
+        height: 956
+      alignment: 9
+      pivot: {x: 0.41510808, y: 0.5578749}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Player_Run_Down_Up_2_1
       rect:
         serializedVersion: 2
-        x: 488
-        y: 161
-        width: 313
-        height: 709
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 394
+        y: 0
+        width: 391
+        height: 961
+      alignment: 9
+      pivot: {x: 0.2770239, y: 0.58025426}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: Player_Run_Down_Up_2_2
       rect:
         serializedVersion: 2
-        x: 833
-        y: 99
-        width: 302
-        height: 773
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 0
+        width: 401
+        height: 963
+      alignment: 9
+      pivot: {x: 0.4832756, y: 0.5069642}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Player_Run_Down_Up_2_3
       rect:
         serializedVersion: 2
-        x: 1159
-        y: 88
-        width: 303
-        height: 772
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1214
+        y: 0
+        width: 388
+        height: 961
+      alignment: 9
+      pivot: {x: 0.51296335, y: 0.4965108}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 458bd9b6c29447d4a8c7484e43cb33b4
     internalID: 0
     vertices: []
     indices: 

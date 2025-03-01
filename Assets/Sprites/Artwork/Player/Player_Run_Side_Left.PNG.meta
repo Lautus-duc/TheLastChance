@@ -125,12 +125,12 @@ TextureImporter:
       name: Player_Run_Side_Left_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 360
+        x: 0
+        y: 147
         width: 623
         height: 897
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Player_Run_Side_Left_1
       rect:
         serializedVersion: 2
-        x: 731
-        y: 358
-        width: 608
-        height: 900
+        x: 668
+        y: 103
+        width: 536
+        height: 919
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: Player_Run_Side_Left_2
       rect:
         serializedVersion: 2
-        x: 1424
-        y: 316
-        width: 508
-        height: 946
+        x: 1227
+        y: 83
+        width: 550
+        height: 961
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Player_Run_Side_Left_3
       rect:
         serializedVersion: 2
-        x: 2025
-        y: 325
-        width: 328
+        x: 1777
+        y: 126
+        width: 611
         height: 918
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e60478bb1a57d124db5c1ae763a90de6
     internalID: 0
     vertices: []
     indices: 

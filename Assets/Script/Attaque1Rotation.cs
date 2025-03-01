@@ -6,8 +6,6 @@ using System;
 public class Attaque1 : MonoBehaviour
 {
 
-
-
     private Camera cam;
     
     void Start()

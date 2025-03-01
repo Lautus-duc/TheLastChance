@@ -8,6 +8,8 @@ TagManager:
   - EnemySpawnPoint
   - HealthBarre
   - Canva
+  - Bullet
+  - PlayerGameManager
   layers:
   - Default
   - TransparentFX

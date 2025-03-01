@@ -11,14 +11,14 @@ public class Attaque1Action : MonoBehaviour
 
     private Player player;
 
-    private float timeToAct = 0;
+    private float timeToAct;
 
     private bool canAttack = true;
 
 
 
     [SerializeField]
-    private float timeBetweenLow = 0.05f;
+    private float timeBetweenLow = 1f;
     [SerializeField]
     private float timeBetweenHight = 0.5f;
 
@@ -37,46 +37,27 @@ public class Attaque1Action : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        if(Input.GetMouseButton(0))
-        {
-            AttackLow();
-        }
-
-        else if(Input.GetMouseButtonDown(0) && Time.time > timeToAct)
-        {
-            AttackHight();
-        }
-
-        else
-        {
-            anim.SetBool("attack",false);
-        }
-
-    }
-
-
-    private void AttackLow()
+    public void AttackLow()
     {
         if(canAttack || 1==1 ) // A travailler plus tard!!
         {
+            Debug.Log(2);
             anim.SetBool("attack",true);
+            canAttack = false;
             StartCoroutine(TimeWaitBetweenLow());
         }
 
     }
+
     private IEnumerator TimeWaitBetweenLow()
     {
-        canAttack = false;
-
         yield return new WaitForSeconds(timeBetweenLow);
-
         canAttack = true;
-
+        anim.SetBool("attack",false);
+        gameObject.SetActive(false);
     }
 
-    private void AttackHight()
+    public void AttackHight()
     {
         if(canAttack || 1==1 ) // A travailler plus tard!!
         {
@@ -97,6 +78,10 @@ public class Attaque1Action : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenHight);
 
         canAttack = true;
+        
+        anim.SetBool("attack",false);
+        
+        gameObject.SetActive(false);
 
     }
 

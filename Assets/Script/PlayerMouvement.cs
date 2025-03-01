@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using NUnit.Framework.Constraints;
+using System;
 
 public class PlayerMouvement : MonoBehaviour
 {
@@ -11,25 +8,45 @@ public class PlayerMouvement : MonoBehaviour
 
     [SerializeField]
     Rigidbody2D rb;
+    [SerializeField]
+    GameObject InventaryGO;
     Vector2 dir;
     Animator anim;
+    SpriteRenderer spriteRenderer;
+    private bool isHere;
+
 
     void Start()
     {
         anim =GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        isHere = true;
     }
 
 
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            isHere = false;
+            InventaryGO.SetActive(true);
+        }
+        else if(isHere){
         //Mouvement du Hero
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
 
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
         SetParam();
+        spriteRenderer.sortingOrder=-(int)Math.Floor(rb.position.y);}
 
+    }
+
+    public void IsBackInGame(){
+        InventaryGO.SetActive(false);
+        isHere = true;
     }
 
     void SetParam()

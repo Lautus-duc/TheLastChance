@@ -1,6 +1,8 @@
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using System;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer))]
 public class EnemyStat : MonoBehaviour
 {
 
@@ -22,6 +24,15 @@ public class EnemyStat : MonoBehaviour
 
     public EnemyManager EnemyManager{get{return enemyManager; } set{enemyManager = value ;} }
 
+    private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     public EnemyStat()
     {
         PV = 250f;
@@ -37,6 +48,11 @@ public class EnemyStat : MonoBehaviour
             enemyManager.ParticleEnemyDeath(GetComponent<Transform>());
             Destroy(gameObject);
         }
+    }
+
+    void Update()
+    {
+        spriteRenderer.sortingOrder=-(int)Math.Floor(rb.position.y);
     }
 
 

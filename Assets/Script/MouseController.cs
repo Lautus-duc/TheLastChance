@@ -1,18 +1,43 @@
 using UnityEngine;
 
+
+public enum SceneGameType{
+    None,
+    Game,
+    Option,
+    Inventory,
+}
+
+
 public class MouseController : MonoBehaviour
 {
+    [SerializeField]
+    private SceneGameType sceneGameType;
+    [SerializeField]
+    private GameObject Attack;
+
+    void Start()
+    {
+        sceneGameType = SceneGameType.Game;
+    }
+
+    public void SetScene(SceneGameType _sceneGameType){
+        sceneGameType = _sceneGameType;
+    }
     
+    public SceneGameType GetScene(){
+        return sceneGameType;
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
+        if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("Left mouse button pressed");
-        }
-
-        if (Input.GetMouseButtonDown(1)) // Right mouse button
-        {
-            //Debug.Log("Right mouse button pressed");
+            if(sceneGameType == SceneGameType.Game){
+                Attack.SetActive(true);
+                Attack.GetComponent<Attaque1Action>().AttackLow();
+            }
         }
     }
+
 }
