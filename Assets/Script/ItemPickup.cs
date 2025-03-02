@@ -1,5 +1,4 @@
-namespace DefaultNamespace;
-
+using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     public InventoryItem item;

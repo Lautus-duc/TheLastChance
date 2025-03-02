@@ -1,5 +1,4 @@
-namespace DefaultNamespace;
-
+using UnityEngine;
 public class Defence : InventoryItem
 {
     public Defence(string name, Sprite icon) : this(name, icon, ItemType.Defence) {}

@@ -1,5 +1,4 @@
-namespace DefaultNamespace;
-
+using UnityEngine;
 public class Meal : Food
 {
     public MealType MealCategory { get; private set; }

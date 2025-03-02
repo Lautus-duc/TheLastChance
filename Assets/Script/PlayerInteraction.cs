@@ -1,5 +1,4 @@
-namespace DefaultNamespace;
-
+using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public PaletteManager paletteManager;
@@ -13,4 +12,6 @@ public class PlayerInteraction : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+    
 }

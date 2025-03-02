@@ -1,5 +1,4 @@
-namespace DefaultNamespace;
-
+using UnityEngine;
 public class InventoryItem
 {
     public string Name { get; private set; }
