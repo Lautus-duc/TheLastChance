@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8a88029e865c84f9f5387787222dfc, type: 3}
+  m_Name: Desert
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 7fa32c83dce11224bbcec88ff53b0d73, type: 2}
+  - {fileID: 11400000, guid: 93bceadfae6b5394486ccd6e0dd4c358, type: 2}
+  - {fileID: 11400000, guid: 80bdbd5f708c76148bc344006912fd19, type: 2}
+  - {fileID: 11400000, guid: 517816284dd811647a79a5db2e5fa5c4, type: 2}
+  - {fileID: 11400000, guid: beac0f66e91548b43b8d80d36f1987e4, type: 2}
+  - {fileID: 11400000, guid: db9b7f7b06bfcbe4ca956bfdee7c5c2a, type: 2}
+  - {fileID: 11400000, guid: 21013262fbc11884ba3e1bdff92964de, type: 2}
+  - {fileID: 11400000, guid: 381864f961d241a49a299250210f19dd, type: 2}
+  VegetalsGOs:
+  - {fileID: 6437363336715191777, guid: 6644b9559b9afaa438ca400073a5c859, type: 3}
+  - {fileID: 5154799898545138175, guid: f90367ddffab44e4a87e1eaa589f733e, type: 3}
+  minHeight: 0.2
+  minMoisture: 0
+  minHeat: 0.5
+  minVegetal: 0.7
+  numberOfTheVege: 3
+  IsCollidered: 0
