@@ -10,6 +10,7 @@ public class Map_V2 : MonoBehaviour
     [Header("Biomes")]
     public BiomePreset_V2[] biomes;
     public BiomePreset_V2 baseBiome;
+    public BiomePreset_V2 borderBiome;
     public BiomePreset_V2 firstBiome;
 
     [Header("Dimensions")]
@@ -47,14 +48,16 @@ public class Map_V2 : MonoBehaviour
 
     void GenerateMap ()
     {
+        //set seed whith time
+        float seed = DateTime.Now.Second*555/60;
         // height map
-        heightMap = NoiseGenerator.Generate(width, height, scale, heightWaves, offset);
+        heightMap = NoiseGenerator.Generate(width, height, scale, heightWaves, offset, seed);
         // moisture map
-        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset);
+        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset, seed);
         // heat map
-        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset);
+        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset, seed);
         // vegetal map
-        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset);
+        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset, seed);
         
         int maxDist = (width*width + height*height)/4;
 
@@ -74,6 +77,11 @@ public class Map_V2 : MonoBehaviour
                     BiomePreset_V2 bpv = baseBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                }
+                else if(x<13||x>width-13||y<13||y>height-13){
+                    BiomePreset_V2 bpv = borderBiome; 
+                    Tile newTile = bpv.GetTileSprite();
+                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),true);
                 }
                 else if(xmin*xmin+ymin*ymin<600){
                     BiomePreset_V2 bpv = firstBiome; 
