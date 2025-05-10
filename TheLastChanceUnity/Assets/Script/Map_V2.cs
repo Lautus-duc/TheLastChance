@@ -40,6 +40,7 @@ public class Map_V2 : MonoBehaviour
     [Header("Autres")]
     public GameObject tilePrefab;
     public TileMapGenerate_V2 tileMapGenerate;
+    public TilemapRenderer tilemapColRend;
 
 
 
@@ -74,16 +75,25 @@ public class Map_V2 : MonoBehaviour
                     xmin*=-1;
                 }
                 if(xmin*xmin+ymin*ymin<81){
+
+                    // Base terre
+                    
                     BiomePreset_V2 bpv = baseBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
                 }
                 else if(x<13||x>width-13||y<13||y>height-13){
+
+                    // Border
+                    
                     BiomePreset_V2 bpv = borderBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),true);
                 }
                 else if(xmin*xmin+ymin*ymin<600){
+
+                    // Generation des environs de la base
+
                     BiomePreset_V2 bpv = firstBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
@@ -92,7 +102,7 @@ public class Map_V2 : MonoBehaviour
 
                     if(vegNumber!=-1){
                         Transform vegPrefab = bpv.GetVegetalGO().GetComponent<Transform>();
-                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f+4.4f, (y-(height/2))*1.16f+5f, 0), Quaternion.identity);
+                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f, (y-(height/2))*1.16f, 0), Quaternion.identity);
                         VegInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(VegInstanciate.GetComponent<Transform>().position.y);
                         if(UnityEngine.Random.Range(0, 3)<=1){
                             VegInstanciate.GetComponent<SpriteRenderer>().flipX = true;
@@ -100,7 +110,10 @@ public class Map_V2 : MonoBehaviour
                     }
                 }
                 else{
-                    //-----Using the TileMapGenerate-----//
+
+
+                    //gen map en total
+
                     (BiomePreset_V2 biomeP,bool isCol) = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]);
                     Tile newTile = biomeP.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),isCol);
@@ -109,7 +122,7 @@ public class Map_V2 : MonoBehaviour
 
                     if(vegNumber!=-1){
                         Transform vegPrefab = biomeP.GetVegetalGO().GetComponent<Transform>();
-                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f+4.4f, (y-(height/2))*1.16f+5f, 0), Quaternion.identity);
+                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f, (y-(height/2))*1.16f, 0), Quaternion.identity);
                         VegInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(VegInstanciate.GetComponent<Transform>().position.y);
                         if(UnityEngine.Random.Range(0, 3)<=1){
                             VegInstanciate.GetComponent<SpriteRenderer>().flipX = true;
@@ -132,6 +145,7 @@ public class Map_V2 : MonoBehaviour
         tileMapGenerate = GetComponent<TileMapGenerate_V2>();
         TilemapRenderer TRendOfTileMap = GetComponent<TilemapRenderer>();
         TRendOfTileMap.sortingOrder = -height*2;
+        tilemapColRend.sortingOrder = -height*2+1;
         GenerateMap();
     }
 
