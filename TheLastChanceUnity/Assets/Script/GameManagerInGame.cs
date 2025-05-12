@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -38,6 +39,9 @@ public class GameManagerInGame : MonoBehaviour
     private float timer;
     public bool isDay;
     public bool switchTime = false;
+
+    [Header ("Player")]
+    public List<Transform> PlayerList;
 
 
 
@@ -89,33 +93,72 @@ public class GameManagerInGame : MonoBehaviour
     private void InstantiatePlayer()
     {
         playerInstanciate = Instantiate(playerPrefab, SpawnPoint.position, Quaternion.identity);
-
+        PlayerList.Add(playerInstanciate);
         playerFightScript = playerInstanciate.GetComponent<PlayerFight>();
-
         playerFightScript.gameManager = this;
     }
 
+    private void InstantiatePlayer(Transform playerTransform)
+    {
+        playerInstanciate = Instantiate(playerPrefab, SpawnPoint.position, Quaternion.identity);
+        PlayerList.Add(playerInstanciate);
+        playerFightScript = playerInstanciate.GetComponent<PlayerFight>();
+        playerFightScript.gameManager = this;
+    }
+
+    // PlayerDeath
+
     public void PlayerDeath()
     {
-        Destroy(playerInstanciate.gameObject);
-        StartCoroutine(RespawnPlayer());
+        if(PlayerList.Count<2)
+        {
+            Destroy(playerInstanciate.gameObject);
+            StartCoroutine(RespawnPlayer());
+        }
+        else
+        {
+            Debug.Log("Necessite to specify which player to destroy");
+        }
     }
+
+    public void PlayerDeath(Transform playerTransform)
+    {
+        Destroy(playerTransform.gameObject);
+        StartCoroutine(RespawnPlayer(playerTransform));
+    }
+
+    // Respawn Player
 
     private IEnumerator RespawnPlayer()
     {
         PlaySoundRespawn();
-
         yield return new WaitForSeconds(6.4f);
-
         InstantiatePlayer();
+        PlayerList.Clear();
+        Debug.Log(PlayerList.Count);
+        SpawnParticle();
+    }
 
+    private IEnumerator RespawnPlayer(Transform playerTransform)
+    {
+        PlaySoundRespawn();
+        yield return new WaitForSeconds(6.4f);
+        InstantiatePlayer(playerTransform);
+        PlayerList.Remove(playerTransform);
         SpawnParticle();
     }
 
 
+    // Spawn Particles
     private void SpawnParticle()
     {
         Vector3 vector3 = new Vector3(playerInstanciate.position.x, playerInstanciate.position.y, 1f);
+        var clone = Instantiate(particleSpawn, vector3, Quaternion.identity);
+        Destroy(clone, 3f);
+    }
+    private void SpawnParticle(Transform playerTransform)
+    {
+        Vector3 vector3 = new Vector3(playerTransform.position.x, playerTransform.position.y, 1f);
         var clone = Instantiate(particleSpawn, vector3, Quaternion.identity);
         Destroy(clone, 3f);
     }

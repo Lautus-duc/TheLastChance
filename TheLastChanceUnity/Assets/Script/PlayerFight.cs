@@ -17,7 +17,7 @@ public class PlayerFight : PlayerStats
     }
 
     public void IsKill (){
-        gameManager.PlayerDeath();
+        gameManager.PlayerDeath(GetComponent<Transform>());
     }
     
     public void GetHeal(float healReceve)

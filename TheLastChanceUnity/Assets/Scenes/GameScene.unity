@@ -1222,10 +1222,11 @@ MonoBehaviour:
   tilemapRanderScript: {fileID: 455345213}
   canvas: {fileID: 5257826548444355168, guid: a7cd2423e0765c1479a449d771f7a7d8, type: 3}
   canvas_Barre_Script: {fileID: 0}
-  timerDurationDay: 10
+  timerDurationDay: 100
   timerDurationNight: 10
   isDay: 0
   switchTime: 0
+  PlayerList: []
 --- !u!4 &769837579
 Transform:
   m_ObjectHideFlags: 0
