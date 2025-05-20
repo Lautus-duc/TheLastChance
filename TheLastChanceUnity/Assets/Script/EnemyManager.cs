@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.Android.Gradle;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -26,8 +28,11 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private Transform SpawnPoint;
 
+    public GameManagerInGame GameManager;
+
     void Start()
     {
+        GameManager = GetComponent<GameManagerInGame>();
         StartCoroutine("SpawnEnum");
         //Pour la présentation
         for (int i = 0; i<nRank; i++)
@@ -80,5 +85,22 @@ public class EnemyManager : MonoBehaviour
         Vector3 vector3 = new Vector3(enemy.position.x, enemy.position.y, 1f);
         var clone = Instantiate(particleEnemyDeath, vector3, Quaternion.identity);
         Destroy(clone, 3f);
+    }
+
+    public Transform ThePlayerMostClose(Transform enemy){
+        Transform closest = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (var g in GameManager.PlayerList)
+        {
+            var t = g.GetComponent<Transform>();
+            float distance = Vector3.Distance(enemy.position, t.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = t;
+            }
+        }
+        return closest;
     }
 }

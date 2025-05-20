@@ -11,10 +11,12 @@ public class PlayerHealthBarre : CanvaMain
     private Color PV_BarreColor;
     
     public float HeightBarre_PV= 100f;
-    public void ChangeBarrePV(float pv, float pvMax){
-        
-        float valueActual = pv/pvMax;
-        PV_BarreTransform.localScale = new Vector3(valueActual,PV_BarreTransform.localScale.y,PV_BarreTransform.localScale.z);
+
+    public void ChangeBarrePV(float pv, float pvMax)
+    {
+
+        float valueActual = pv / pvMax;
+        PV_BarreTransform.localScale = new Vector3(valueActual, PV_BarreTransform.localScale.y, PV_BarreTransform.localScale.z);
 
     }
 

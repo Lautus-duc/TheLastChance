@@ -31,6 +31,9 @@ public class Map_V2 : MonoBehaviour
     [Header("Vegetal Map")]
     public Wave[] vegetalWaves;
     public float[,] vegetalMap;
+    [Header("Mini Vegetal Map")]
+    public Wave[] miniVegetalWaves;
+    public float[,] miniVegetalMap;
 
     [Header("Base")]
     public GameObject campFire;
@@ -54,13 +57,11 @@ public class Map_V2 : MonoBehaviour
         // height map
         heightMap = NoiseGenerator.Generate(width, height, scale, heightWaves, offset, seed);
         // moisture map
-        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset, seed);
+        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset, seed*1.2f);
         // heat map
-        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset, seed);
+        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset, seed*0.9f);
         // vegetal map
-        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset, seed);
-        
-        int maxDist = (width*width + height*height)/4;
+        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset, seed*1.5f);
 
         for(int x = 0; x < width; ++x)
         {
@@ -74,7 +75,32 @@ public class Map_V2 : MonoBehaviour
                 if(x>width/2){
                     xmin*=-1;
                 }
-                if(xmin*xmin+ymin*ymin<81){
+
+                if((20-x)*(20-x)+(20-y)*(20-y)<25){
+
+                    // Crach 1
+                    
+                    BiomePreset_V2 bpv = baseBiome; 
+                    Tile newTile = bpv.GetTileSprite();
+                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                }
+                else if((20-x)*(20-x)+(height-20-y)*(height-20-y)<25){
+
+                    // Crach 2
+                    
+                    BiomePreset_V2 bpv = baseBiome; 
+                    Tile newTile = bpv.GetTileSprite();
+                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                }
+                else if((width-20-x)*(width-20-x)+(height-20-y)*(height-20-y)<25){
+
+                    // Crach 3
+                    
+                    BiomePreset_V2 bpv = baseBiome; 
+                    Tile newTile = bpv.GetTileSprite();
+                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                }
+                else if(xmin*xmin+ymin*ymin<81){
 
                     // Base terre
                     

@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using Unity.Properties;
 
 public class Attaque1Area : MonoBehaviour
 {

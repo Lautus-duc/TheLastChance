@@ -1,6 +1,7 @@
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviourPun
 {
 
     private GameObject attackArea = default;
@@ -10,20 +11,24 @@ public class PlayerAttack : MonoBehaviour
 
     private float timeToAct = 0.25f;
     private float timer = 0;
-    
+    [SerializeField]
+    private PlayerMouvement playerMouvement;
+
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
+        playerMouvement = GetComponent<PlayerMouvement>();
     }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (!photonView.IsMine || !playerMouvement.isHere) return;
+        if (Input.GetMouseButtonDown(0) && playerMouvement.isHere)
         {
             Attack();
         }
 
-        if(isAttacking)
+        if(isAttacking && playerMouvement.isHere)
         {
             timer += Time.deltaTime;
 

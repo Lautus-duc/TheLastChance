@@ -5,11 +5,14 @@ using System.Collections;
 
 public class Enemy1 : EnemyStat
 {
+    private Transform EnemyTransform;
+
+    public bool IsNotInCouroutine = true;
 
     public GameObject targetPlayer;
     public Transform targetTransform;
     private Animator anim;
-    private Vector2 dir;
+    public Vector2 dir;
 
     [SerializeField]
     private float distanceAccessible = 10f;
@@ -26,44 +29,43 @@ public class Enemy1 : EnemyStat
 
     void Start()
     {
+        EnemyTransform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         rb.freezeRotation = true;
     }
 
-    Enemy1() : base()
-    {
-        
-    }
-
     void Update()
     {
-        GameObject newtargetPlayer = GameObject.FindWithTag("Player");
-        if(targetPlayer == null && newtargetPlayer != null)
-        {
-            targetPlayer = newtargetPlayer;
-            targetTransform = targetPlayer.GetComponent<Transform>();
-        }
+        GameObject newtargetPlayer = GameObject.FindGameObjectWithTag("Player");
 
-        else if (newtargetPlayer != null && GetDistance() )
+        if (newtargetPlayer != null)
         {
-            x2 = targetTransform.position.x;
-            y2 = targetTransform.position.y;
             Deplacement();
         }
-        else
+
+        else if (targetPlayer == null)
+        {
+            targetPlayer = newtargetPlayer;
+            targetTransform = EnemyManager.ThePlayerMostClose(EnemyTransform);
+        }
+
+
+        if(targetTransform == null)
         {
             targetPlayer = null;
-            targetTransform = null;
-            dir.x = 0;
-            dir.y = 0;
+            Deplacement();
         }
     }
 
 
     private bool GetDistance()
     {
+        if (targetTransform is null) return false;
+
+        x2 = targetTransform.position.x;
+        y2 = targetTransform.position.y;
         x1 = GetComponent<Transform>().position.x;
         y1 = GetComponent<Transform>().position.y;
 
@@ -73,60 +75,58 @@ public class Enemy1 : EnemyStat
 
     private void Deplacement()
     {
-        if (targetPlayer is null){
-            StartCoroutine(WaitAPlayer());
-        }
-        else{
-            if(x1 < x2)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-                dir.x = 1;
-            }
-            else if(x2<x1)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-                dir.x = -1;
+        if(IsNotInCouroutine)
+        {
+            if (targetPlayer is null || !GetDistance()){
+                StartCoroutine(WaitAPlayer());
             }
             else
             {
-                dir.x = 0;
-            }
+                if(x1 < x2)
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                    dir.x = 1;
+                }
+                else if(x2<x1)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                    dir.x = -1;
+                }
+                else
+                {
+                    dir.x = 0;
+                }
 
-            if(y1 < y2)
-            {
-                dir.y = 1;
+                if(y1 < y2)
+                {
+                    dir.y = 1;
+                }
+                else if (y2 < y1)
+                {
+                    dir.y = -1;
+                }
+                else
+                {
+                    dir.y = 0;
+                }
+                rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
             }
-            else if (y2 < y1)
-            {
-                dir.y = -1;
-            }
-            else
-            {
-                dir.y = 0;
-            }
-            rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
         }
     }
 
 
     private IEnumerator WaitAPlayer()
     {
+        IsNotInCouroutine = false;
         dir.y = 0;
-        dir.x = 1;
+        dir.x = 1f;
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
-        yield return new WaitForSeconds(1f);
-        dir.y = 1;
-        dir.x = 0;
+        yield return new WaitForSeconds(0.5f);
+        dir.x -= 1f;
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
-        yield return new WaitForSeconds(1f);
-        dir.y = 0;
-        dir.x = -1;
-        rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
-        yield return new WaitForSeconds(1f);
-        dir.y = -1;
-        dir.x = 0;
-        rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+
+        IsNotInCouroutine = true;
     }
 
 }

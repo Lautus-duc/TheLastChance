@@ -6,9 +6,6 @@ public class EnemyFight : EnemyStat
 
     [SerializeField]
     private CircleCollider2D AttackCollider;
-    void Update()
-    {
-    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {

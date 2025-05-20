@@ -1,6 +1,4 @@
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections;
 
 public class Attaque1Action : MonoBehaviour
@@ -39,7 +37,7 @@ public class Attaque1Action : MonoBehaviour
 
     public void AttackLow()
     {
-        if(canAttack || 1==1 ) // A travailler plus tard!!
+        if(1==1 || canAttack ) // A travailler plus tard!!
         {
             anim.SetBool("attack",true);
             canAttack = false;
@@ -63,10 +61,6 @@ public class Attaque1Action : MonoBehaviour
             canAttack = false;
             anim.SetBool("attack",true);
             StartCoroutine(TimeWaitBetweenHight());
-        }
-        else
-        {
-            anim.SetBool("attack",false);
         }
 
     }
