@@ -44,6 +44,7 @@ public class Map_V2 : MonoBehaviour
     public GameObject tilePrefab;
     public TileMapGenerate_V2 tileMapGenerate;
     public TilemapRenderer tilemapColRend;
+    public GameObject Crach;
 
 
 
@@ -83,6 +84,10 @@ public class Map_V2 : MonoBehaviour
                     BiomePreset_V2 bpv = baseBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    if (20 - x == 0 && 20 - y == 0)
+                    {
+                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                    }
                 }
                 else if((20-x)*(20-x)+(height-20-y)*(height-20-y)<25){
 
@@ -91,6 +96,10 @@ public class Map_V2 : MonoBehaviour
                     BiomePreset_V2 bpv = baseBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    if (20 - x == 0 && height - 20 - y == 0)
+                    {
+                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                    }
                 }
                 else if((width-20-x)*(width-20-x)+(height-20-y)*(height-20-y)<25){
 
@@ -99,6 +108,10 @@ public class Map_V2 : MonoBehaviour
                     BiomePreset_V2 bpv = baseBiome; 
                     Tile newTile = bpv.GetTileSprite();
                     tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    if (width - 20 - x == 0 && height - 20 - y == 0)
+                    {
+                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                    }
                 }
                 else if(xmin*xmin+ymin*ymin<81){
 
