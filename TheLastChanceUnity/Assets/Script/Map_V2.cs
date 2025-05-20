@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
-using Unity.VisualScripting;
 
 
 public class Map_V2 : MonoBehaviour
@@ -49,11 +48,6 @@ public class Map_V2 : MonoBehaviour
     [SerializeField]
     private GameManagerInGame gameManager;
 
-
-
-
-
-
     void GenerateMap()
     {
         //set seed whith time
@@ -94,6 +88,7 @@ public class Map_V2 : MonoBehaviour
                     {
                         var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
                         c1.GetComponent<CrachObjective>().gameManager = gameManager;
+                        c1.GetComponent<SpriteRenderer>().sortingOrder = -height*2+1;
                     }
                 }
                 else if ((20 - x) * (20 - x) + (height - 20 - y) * (height - 20 - y) < 25)
@@ -108,6 +103,7 @@ public class Map_V2 : MonoBehaviour
                     {
                         var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
                         c1.GetComponent<CrachObjective>().gameManager = gameManager;
+                        c1.GetComponent<SpriteRenderer>().sortingOrder = -height*2+1;
                     }
                 }
                 else if ((width - 20 - x) * (width - 20 - x) + (height - 20 - y) * (height - 20 - y) < 25)
@@ -122,6 +118,7 @@ public class Map_V2 : MonoBehaviour
                     {
                         var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
                         c1.GetComponent<CrachObjective>().gameManager = gameManager;
+                        c1.GetComponent<SpriteRenderer>().sortingOrder = -height*2+1;
                     }
                 }
                 else if (xmin * xmin + ymin * ymin < 81)

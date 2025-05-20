@@ -736,7 +736,6 @@ GameObject:
   - component: {fileID: 6923821641519433897}
   - component: {fileID: 8852579397753690344}
   - component: {fileID: 9191988415627978584}
-  - component: {fileID: 7640237065510575377}
   - component: {fileID: 6551267934906405720}
   m_Layer: 5
   m_Name: BarreHungry_Img
@@ -802,20 +801,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7640237065510575377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2783602029849991236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f8b550afccb594eaa474eb12280789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthBarre: {fileID: 0}
-  HealthBarreGO: {fileID: 0}
 --- !u!114 &6551267934906405720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,9 +1167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0bbe9a91c321d40882a15f1566d7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  player: {fileID: 0}
-  canvas: {fileID: 0}
+  cam: {fileID: 4562308832849330126}
+  player: {fileID: 8228844925934943853}
+  canvas: {fileID: 2186053833356699498}
 --- !u!1 &4680374462489455940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2631,6 @@ GameObject:
   - component: {fileID: 4202620452473107152}
   - component: {fileID: 4873923113468256866}
   - component: {fileID: 1081560476678586183}
-  - component: {fileID: 3549865476020242415}
   - component: {fileID: 3949249404865065393}
   m_Layer: 5
   m_Name: BarreBrunk_Img
@@ -2712,20 +2696,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3549865476020242415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483016035929473651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f8b550afccb594eaa474eb12280789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthBarre: {fileID: 0}
-  HealthBarreGO: {fileID: 0}
 --- !u!114 &3949249404865065393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,7 +2723,6 @@ GameObject:
   - component: {fileID: 1789410113207069725}
   - component: {fileID: 3913474029519193311}
   - component: {fileID: 417405808140401406}
-  - component: {fileID: 3781104406397159296}
   - component: {fileID: 8866786105796771881}
   m_Layer: 5
   m_Name: BarreHealth_Img
@@ -2819,20 +2788,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3781104406397159296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8589862766547472937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f8b550afccb594eaa474eb12280789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthBarre: {fileID: 0}
-  HealthBarreGO: {fileID: 0}
 --- !u!114 &8866786105796771881
 MonoBehaviour:
   m_ObjectHideFlags: 0

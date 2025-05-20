@@ -41,24 +41,27 @@ public class Enemy1 : EnemyStat
 
     void Update()
     {
-        GameObject[] newtargetsPlayer = GameObject.FindGameObjectsWithTag(typeOfTarget);
-        GameObject newtargetPlayer = null;
-
-        foreach (var targetPlayerIN in newtargetsPlayer)
+        
+        if(targetTransform == null)
         {
-            if (GetDistance(targetPlayerIN.GetComponent<Transform>()))
+            GameObject[] newtargetsPlayer = GameObject.FindGameObjectsWithTag(typeOfTarget);
+            foreach (var targetPlayerIN in newtargetsPlayer)
             {
-                newtargetPlayer = targetPlayerIN;
-                break;
+                if (GetDistance(targetPlayerIN.GetComponent<Transform>()))
+                {
+                    Debug.Log("Target : 2");
+                    Debug.Log("Target : 0");
+                    targetTransform = targetPlayerIN.GetComponent<Transform>();
+                    break;
+                }
             }
         }
-        if (newtargetPlayer != null)
+        if (targetTransform != null)
         {
             Deplacement();
         }
-        else if (targetPlayer == null)
+        else
         {
-            targetPlayer = newtargetPlayer;
             targetTransform = EnemyManager.ThePlayerMostClose(EnemyTransform, typeOfTarget);
         }
         if(targetTransform == null)
