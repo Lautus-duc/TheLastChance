@@ -9,10 +9,14 @@ public class EnemyFight : EnemyStat
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.GetComponent<PlayerStats>() != null)
+        if (collider.GetComponent<PlayerStats>() != null)
         {
             PlayerFight plF = collider.GetComponent<PlayerFight>();
             plF.GetDammages(Damage);
+        }
+        else if (collider.GetComponent<FireCamp>() != null)
+        {
+            
         }
     }
 }

@@ -4,7 +4,7 @@ using Photon.Pun;
 public class PlayerFight : PlayerStats
 {
     [SerializeField]
-    public PlayerHealthBarre HP_Barre_Script;
+    public PlayerBarre HP_Barre_Script;
     public GameManagerInGame gameManager;
     public int NP;
 
@@ -24,10 +24,10 @@ public class PlayerFight : PlayerStats
         if (PV <= 0)
         {
             PV = 0;
-            HP_Barre_Script.ChangeBarrePV(0, maxPV);
+            HP_Barre_Script.ChangeBarre(0, maxPV);
             IsKill();
         }
-        HP_Barre_Script.ChangeBarrePV(PV, maxPV);
+        HP_Barre_Script.ChangeBarre(PV, maxPV);
     }
 
     public void IsKill (){

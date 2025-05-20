@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Android.Gradle;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -87,20 +85,32 @@ public class EnemyManager : MonoBehaviour
         Destroy(clone, 3f);
     }
 
-    public Transform ThePlayerMostClose(Transform enemy){
-        Transform closest = null;
-        float minDistance = Mathf.Infinity;
+    public Transform ThePlayerMostClose(Transform enemy, string typeOfTarget)
+    {
+        GameObject[] newtargetsPlayer = GameObject.FindGameObjectsWithTag(typeOfTarget);
+        Transform closest = newtargetsPlayer[0].GetComponent<Transform>();
+        float posClose = 800;
 
-        foreach (var g in GameManager.PlayerList)
+        foreach (var targetPlayerIN in newtargetsPlayer)
         {
-            var t = g.GetComponent<Transform>();
-            float distance = Vector3.Distance(enemy.position, t.position);
-            if (distance < minDistance)
+            float newpos = GetDistance(targetPlayerIN.GetComponent<Transform>());
+            if (newpos < posClose)
             {
-                minDistance = distance;
-                closest = t;
+                closest = targetPlayerIN.GetComponent<Transform>();
+                posClose = newpos;
             }
         }
         return closest;
+    }
+    private float GetDistance(Transform transform)
+    {
+        if (transform is null) return 800;
+
+        float x2 = transform.position.x;
+        float y2 = transform.position.y;
+        float x1 = GetComponent<Transform>().position.x;
+        float y1 = GetComponent<Transform>().position.y;
+
+        return (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2);
     }
 }

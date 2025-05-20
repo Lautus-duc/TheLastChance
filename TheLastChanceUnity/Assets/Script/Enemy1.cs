@@ -18,6 +18,9 @@ public class Enemy1 : EnemyStat
     private float distanceAccessible = 10f;
 
     [SerializeField]
+    private string typeOfTarget = "Player";
+
+    [SerializeField]
     private float speed = 1f;
 
     private float x1;
@@ -38,20 +41,26 @@ public class Enemy1 : EnemyStat
 
     void Update()
     {
-        GameObject newtargetPlayer = GameObject.FindGameObjectWithTag("Player");
+        GameObject[] newtargetsPlayer = GameObject.FindGameObjectsWithTag(typeOfTarget);
+        GameObject newtargetPlayer = null;
 
+        foreach (var targetPlayerIN in newtargetsPlayer)
+        {
+            if (GetDistance(targetPlayerIN.GetComponent<Transform>()))
+            {
+                newtargetPlayer = targetPlayerIN;
+                break;
+            }
+        }
         if (newtargetPlayer != null)
         {
             Deplacement();
         }
-
         else if (targetPlayer == null)
         {
             targetPlayer = newtargetPlayer;
-            targetTransform = EnemyManager.ThePlayerMostClose(EnemyTransform);
+            targetTransform = EnemyManager.ThePlayerMostClose(EnemyTransform, typeOfTarget);
         }
-
-
         if(targetTransform == null)
         {
             targetPlayer = null;
@@ -60,16 +69,16 @@ public class Enemy1 : EnemyStat
     }
 
 
-    private bool GetDistance()
+    private bool GetDistance(Transform transform)
     {
-        if (targetTransform is null) return false;
+        if (transform is null) return false;
 
-        x2 = targetTransform.position.x;
-        y2 = targetTransform.position.y;
+        x2 = transform.position.x;
+        y2 = transform.position.y;
         x1 = GetComponent<Transform>().position.x;
         y1 = GetComponent<Transform>().position.y;
 
-        return Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)) < distanceAccessible;
+        return Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2) < distanceAccessible*distanceAccessible;
     }
 
 
@@ -77,7 +86,8 @@ public class Enemy1 : EnemyStat
     {
         if(IsNotInCouroutine)
         {
-            if (targetPlayer is null || !GetDistance()){
+            if (targetPlayer is null || !GetDistance(targetTransform))
+            {
                 StartCoroutine(WaitAPlayer());
             }
             else

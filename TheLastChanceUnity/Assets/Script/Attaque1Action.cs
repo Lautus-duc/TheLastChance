@@ -7,7 +7,7 @@ public class Attaque1Action : MonoBehaviour
 
     CapsuleCollider2D attackCollider;
 
-    private Player player;
+    private PlayerStats player;
 
     private float timeToAct;
 

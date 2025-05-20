@@ -46,124 +46,143 @@ public class Map_V2 : MonoBehaviour
     public TilemapRenderer tilemapColRend;
     public GameObject Crach;
 
+    [SerializeField]
+    private GameManagerInGame gameManager;
 
 
 
-    
 
-    void GenerateMap ()
+
+
+    void GenerateMap()
     {
         //set seed whith time
-        float seed = DateTime.Now.Second*555/60;
+        float seed = DateTime.Now.Second * 555 / 60;
         // height map
         heightMap = NoiseGenerator.Generate(width, height, scale, heightWaves, offset, seed);
         // moisture map
-        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset, seed*1.2f);
+        moistureMap = NoiseGenerator.Generate(width, height, scale, moistureWaves, offset, seed * 1.2f);
         // heat map
-        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset, seed*0.9f);
+        heatMap = NoiseGenerator.Generate(width, height, scale, heatWaves, offset, seed * 0.9f);
         // vegetal map
-        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset, seed*1.5f);
+        vegetalMap = NoiseGenerator.Generate(width, height, scale, vegetalWaves, offset, seed * 1.5f);
 
-        for(int x = 0; x < width; ++x)
+        for (int x = 0; x < width; ++x)
         {
-            for(int y = 0; y < height; ++y)
+            for (int y = 0; y < height; ++y)
             {
-                int ymin=height/2-y;
-                if(y>height/2){
-                    ymin*=-1;
+                int ymin = height / 2 - y;
+                if (y > height / 2)
+                {
+                    ymin *= -1;
                 }
-                int xmin=width/2-x;
-                if(x>width/2){
-                    xmin*=-1;
+                int xmin = width / 2 - x;
+                if (x > width / 2)
+                {
+                    xmin *= -1;
                 }
 
-                if((20-x)*(20-x)+(20-y)*(20-y)<25){
+                if ((20 - x) * (20 - x) + (20 - y) * (20 - y) < 25)
+                {
 
                     // Crach 1
-                    
-                    BiomePreset_V2 bpv = baseBiome; 
+
+                    BiomePreset_V2 bpv = baseBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), false);
                     if (20 - x == 0 && 20 - y == 0)
                     {
-                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        c1.GetComponent<CrachObjective>().gameManager = gameManager;
                     }
                 }
-                else if((20-x)*(20-x)+(height-20-y)*(height-20-y)<25){
+                else if ((20 - x) * (20 - x) + (height - 20 - y) * (height - 20 - y) < 25)
+                {
 
                     // Crach 2
-                    
-                    BiomePreset_V2 bpv = baseBiome; 
+
+                    BiomePreset_V2 bpv = baseBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), false);
                     if (20 - x == 0 && height - 20 - y == 0)
                     {
-                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        c1.GetComponent<CrachObjective>().gameManager = gameManager;
                     }
                 }
-                else if((width-20-x)*(width-20-x)+(height-20-y)*(height-20-y)<25){
+                else if ((width - 20 - x) * (width - 20 - x) + (height - 20 - y) * (height - 20 - y) < 25)
+                {
 
                     // Crach 3
-                    
-                    BiomePreset_V2 bpv = baseBiome; 
+
+                    BiomePreset_V2 bpv = baseBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), false);
                     if (width - 20 - x == 0 && height - 20 - y == 0)
                     {
-                        Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        var c1 = Instantiate(Crach, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
+                        c1.GetComponent<CrachObjective>().gameManager = gameManager;
                     }
                 }
-                else if(xmin*xmin+ymin*ymin<81){
+                else if (xmin * xmin + ymin * ymin < 81)
+                {
 
                     // Base terre
-                    
-                    BiomePreset_V2 bpv = baseBiome; 
+
+                    BiomePreset_V2 bpv = baseBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), false);
                 }
-                else if(x<13||x>width-13||y<13||y>height-13){
+                else if (x < 13 || x > width - 13 || y < 13 || y > height - 13)
+                {
 
                     // Border
-                    
-                    BiomePreset_V2 bpv = borderBiome; 
+
+                    BiomePreset_V2 bpv = borderBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),true);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), true);
                 }
-                else if(xmin*xmin+ymin*ymin<600){
+                else if (xmin * xmin + ymin * ymin < 600)
+                {
 
                     // Generation des environs de la base
 
-                    BiomePreset_V2 bpv = firstBiome; 
+                    BiomePreset_V2 bpv = firstBiome;
                     Tile newTile = bpv.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),false);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), false);
 
-                    int vegNumber = bpv.IsVegetalise(vegetalMap[x,y]);
+                    int vegNumber = bpv.IsVegetalise(vegetalMap[x, y]);
 
-                    if(vegNumber!=-1){
+                    if (vegNumber != -1)
+                    {
                         Transform vegPrefab = bpv.GetVegetalGO().GetComponent<Transform>();
-                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f, (y-(height/2))*1.16f, 0), Quaternion.identity);
+                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
                         VegInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(VegInstanciate.GetComponent<Transform>().position.y);
-                        if(UnityEngine.Random.Range(0, 3)<=1){
+                        if (UnityEngine.Random.Range(0, 3) <= 1)
+                        {
                             VegInstanciate.GetComponent<SpriteRenderer>().flipX = true;
                         }
                     }
                 }
-                else{
+                else
+                {
 
 
                     //gen map en total
 
-                    (BiomePreset_V2 biomeP,bool isCol) = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]);
+                    (BiomePreset_V2 biomeP, bool isCol) = GetBiome(heightMap[x, y], moistureMap[x, y], heatMap[x, y]);
                     Tile newTile = biomeP.GetTileSprite();
-                    tileMapGenerate.SetMap(newTile,x-(height/2),y-(height/2),isCol);
+                    tileMapGenerate.SetMap(newTile, x - (height / 2), y - (height / 2), isCol);
 
-                    int vegNumber = biomeP.IsVegetalise(vegetalMap[x,y]);
+                    int vegNumber = biomeP.IsVegetalise(vegetalMap[x, y]);
 
-                    if(vegNumber!=-1){
+                    if (vegNumber != -1)
+                    {
                         Transform vegPrefab = biomeP.GetVegetalGO().GetComponent<Transform>();
-                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x-(width/2))*1.155f, (y-(height/2))*1.16f, 0), Quaternion.identity);
+                        Transform VegInstanciate = Instantiate(vegPrefab, new Vector3((x - (width / 2)) * 1.155f, (y - (height / 2)) * 1.16f, 0), Quaternion.identity);
                         VegInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(VegInstanciate.GetComponent<Transform>().position.y);
-                        if(UnityEngine.Random.Range(0, 3)<=1){
+                        if (UnityEngine.Random.Range(0, 3) <= 1)
+                        {
                             VegInstanciate.GetComponent<SpriteRenderer>().flipX = true;
                         }
                     }

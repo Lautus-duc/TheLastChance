@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1918246035563647102}
   - component: {fileID: 6721093967317862889}
   - component: {fileID: 1560477823876435450}
-  - component: {fileID: 776424810746361119}
   - component: {fileID: 8610810704907577374}
   - component: {fileID: 5284687120213306861}
   - component: {fileID: 8690378855731230977}
@@ -165,23 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
+  IsNotInCouroutine: 1
   targetPlayer: {fileID: 0}
   targetTransform: {fileID: 0}
+  dir: {x: 0, y: 0}
   distanceAccessible: 30
   speed: 2
---- !u!114 &776424810746361119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214379383435347066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936b7c48eb9cc1f40ab5643ee4a2a3a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyManager: {fileID: 0}
 --- !u!114 &8610810704907577374
 MonoBehaviour:
   m_ObjectHideFlags: 0

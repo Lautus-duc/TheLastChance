@@ -1,23 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthBarre : CanvaMain
+public class PlayerBarre : MonoBehaviour
 {
     [SerializeField]
-    private Transform PV_BarreTransform;
+    private Transform BarreTransform;
     [SerializeField]
-    private Image PV_BarreImage;
+    private Image BarreImage;
     [SerializeField]
-    private Color PV_BarreColor;
+    private Color BarreColor;
     
-    public float HeightBarre_PV= 100f;
+    public float HeightBarre= 100f;
 
-    public void ChangeBarrePV(float pv, float pvMax)
+    public void ChangeBarre(float newValue, float maxValue)
     {
-
-        float valueActual = pv / pvMax;
-        PV_BarreTransform.localScale = new Vector3(valueActual, PV_BarreTransform.localScale.y, PV_BarreTransform.localScale.z);
-
+        float valueActual = newValue / maxValue;
+        BarreTransform.localScale = new Vector3(valueActual, BarreTransform.localScale.y, BarreTransform.localScale.z);
     }
 
 }
