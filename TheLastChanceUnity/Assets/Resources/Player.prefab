@@ -2826,6 +2826,7 @@ GameObject:
   - component: {fileID: 5556920364840484789}
   - component: {fileID: 5094026431297740177}
   - component: {fileID: 8950309274118107063}
+  - component: {fileID: 4976630259937955125}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3009,6 +3010,8 @@ MonoBehaviour:
   playerMouvement: {fileID: 7522232202458655388}
   HungerBarre: {fileID: 6551267934906405720}
   gameManager: {fileID: 0}
+  inventoryBackPack: {fileID: 4976630259937955125}
+  DigParticle: {fileID: 5347532455291150015, guid: af1d2ae7937c77245877c149bb9439f3, type: 3}
 --- !u!114 &5647161815639389296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3052,6 +3055,7 @@ MonoBehaviour:
   - {fileID: 5915048006739423380}
   - {fileID: 6622821192927408863}
   - {fileID: 7522232202458655388}
+  - {fileID: 4976630259937955125}
   playerCamera: {fileID: 4979871348104077394}
 --- !u!114 &5915048006739423380
 MonoBehaviour:
@@ -3166,6 +3170,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &4976630259937955125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603709233076284916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c21caaa8bf3f9b47b2c66f9e1cc70ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8632392269101661266
 GameObject:
   m_ObjectHideFlags: 0

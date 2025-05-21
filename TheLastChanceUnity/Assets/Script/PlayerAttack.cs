@@ -1,13 +1,12 @@
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.Assertions.Must;
-using Photon.Pun.Demo.PunBasics;
+using System.Linq;
 
 public class PlayerAttack : MonoBehaviourPun
 {
 
     private GameObject attackArea = default;
-    
+
     [SerializeField]
     private bool isAttacking = false;
 
@@ -15,13 +14,19 @@ public class PlayerAttack : MonoBehaviourPun
     private float timer = 0;
     [SerializeField]
     private PlayerMouvement playerMouvement;
-    
+
     [SerializeField]
     private PlayerBarre HungerBarre;
     [SerializeField]
     private GameManagerInGame gameManager;
     float MaxHunger = 100;
     float Hunger;
+    bool HaveShovel {get => GetComponent<InventoryBackPack>().HaveShovel;}
+    [SerializeField]
+    InventoryBackPack inventoryBackPack;
+
+    [SerializeField]
+    GameObject DigParticle;
 
 
     void Start()
@@ -47,12 +52,31 @@ public class PlayerAttack : MonoBehaviourPun
             }
             HungerBarre.ChangeBarre(Hunger, MaxHunger);
         }
+        if (Input.GetMouseButtonDown(1) && playerMouvement.isHere)
+        {
+            if (HaveShovel)
+            {
+                DigWithShovel();
+            }
+            else
+            {
+                DigWithoutShovel();
+            }
+            Hunger -= 2;
+            if (Hunger <= 0)
+            {
+                Hunger = 0;
+                HungerBarre.ChangeBarre(0, MaxHunger);
+                starveToDeath();
+            }
+            HungerBarre.ChangeBarre(Hunger, MaxHunger);
+        }
 
-        if(isAttacking && playerMouvement.isHere)
+        if (isAttacking && playerMouvement.isHere)
         {
             timer += Time.deltaTime;
 
-            if(timer>=timeToAct)
+            if (timer >= timeToAct)
             {
                 timer = 0;
                 isAttacking = false;
@@ -69,5 +93,46 @@ public class PlayerAttack : MonoBehaviourPun
     {
         isAttacking = true;
         attackArea.SetActive(isAttacking);
+    }
+
+    private void DigWithoutShovel()
+    {
+        Vector3 pos = GetComponents<Transform>().First().position;
+        Vector3 vector3 = new Vector3(pos.x, pos.y-1, 1f);
+        var particle = Instantiate(DigParticle, vector3, Quaternion.identity);
+        float i = Random.Range(0f, 100.0f);
+        if (i < 80.0f)
+        {
+            Debug.Log("Nothing");
+        }
+        else
+        {
+            Debug.Log("Stone");
+            inventoryBackPack.Stone+=1;
+        }
+        Destroy(particle, 1f);
+    }
+
+    private void DigWithShovel()
+    {
+        Vector3 pos = GetComponents<Transform>().First().position;
+        Vector3 vector3 = new Vector3(pos.x, pos.y-1, 1f);
+        var particle = Instantiate(DigParticle, vector3, Quaternion.identity);
+        float i = Random.Range(0f, 100.0f);
+        if (i < 40.0f)
+        {
+            Debug.Log("Nothing");
+        }
+        else if (i < 95.0f)
+        {
+            Debug.Log("Stone");
+            inventoryBackPack.Stone += 1;
+        }
+        else
+        {
+            Debug.Log("Iron");
+            inventoryBackPack.Iron += 1;
+        }
+        Destroy(particle, 2f);
     }
 }

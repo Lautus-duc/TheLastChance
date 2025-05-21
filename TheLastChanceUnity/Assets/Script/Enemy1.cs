@@ -49,8 +49,6 @@ public class Enemy1 : EnemyStat
             {
                 if (GetDistance(targetPlayerIN.GetComponent<Transform>()))
                 {
-                    Debug.Log("Target : 2");
-                    Debug.Log("Target : 0");
                     targetTransform = targetPlayerIN.GetComponent<Transform>();
                     break;
                 }
