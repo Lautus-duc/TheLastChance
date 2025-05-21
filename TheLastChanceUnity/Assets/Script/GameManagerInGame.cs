@@ -30,9 +30,8 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     private GlobalLight2DScript globalLight2DScript;
     [SerializeField]
     private TilemapRanderScript tilemapRanderScript;
-
-    public Canvas canvas;
-    public GameObject canvas_Barre_Script;
+    [SerializeField]
+    private EnemyManager enemyManager;
 
 
     [Header("timer")]
@@ -182,6 +181,8 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
             isDay = false;
             globalLight2DScript.SwitchToNight();
             tilemapRanderScript.SwitchToNight();
+            enemyManager.WaveForNight(4-numberOfObjectives,4-numberOfObjectives);
+
 
         }
         else
@@ -202,7 +203,6 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     public void OneObjectiveCompleted()
     {
         numberOfObjectives -= 1;
-        if (numberOfObjectives <= 0) TheEndOfGame();
     }
 
     public void TheEndOfGame()

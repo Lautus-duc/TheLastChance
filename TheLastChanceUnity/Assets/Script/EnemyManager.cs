@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private float timerBetweenEnnemi = 5f;
 
+    Transform fireCamp;
+
     private float timer = 0f;
 
     [SerializeField]
@@ -27,6 +30,7 @@ public class EnemyManager : MonoBehaviour
     private Transform SpawnPoint;
 
     public GameManagerInGame GameManager;
+
 
     void Start()
     {
@@ -77,6 +81,40 @@ public class EnemyManager : MonoBehaviour
         enemyInstanciate = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
         enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
     }
+    private void InstantiateEnemyToPlayer(Transform player)
+    {
+        float x = Random.Range(-5f, 5f);
+        if (x >= 0) x += 7;
+        else x -= 7;
+        float y = Random.Range(-5f, 5f);
+        if (y >= 0) y += 7;
+        else y -= 7;
+        Vector3 nextPos = new Vector3(player.position.x + x, player.position.y + y);
+        enemyInstanciate = Instantiate(enemyPrefab, nextPos, Quaternion.identity);
+        enemyInstanciate.GetComponent<Enemy1>().targetTransform = player;
+        enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+    }
+
+    private void InstantiateEnemyToFireCamp()
+    {
+        if(fireCamp == null) fireCamp = GameObject.FindGameObjectWithTag("FireCamp").GetComponent<Transform>();
+        float x = Random.Range(-5f, 5f);
+        if (x >= 0) x += 7;
+        else x -= 7;
+        float y = Random.Range(-5f, 5f);
+        if (y >= 0) y += 7;
+        else y -= 7;
+        Vector3 nextPos = new Vector3(fireCamp.position.x + x, fireCamp.position.y + y);
+        enemyInstanciate = Instantiate(enemyPrefab, nextPos, Quaternion.identity);
+        enemyInstanciate.GetComponent<Enemy1>().targetTransform = fireCamp;
+        enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+    }
+
+    public void WaveForNight(int numberOfwave, int numberOfEnemi)
+    {
+        for(int i = 0; i<nRank*2;i++) InstantiateEnemyToFireCamp();
+    }
+
 
     public void ParticleEnemyDeath(Transform enemy)
     {

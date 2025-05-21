@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using System.Collections;
@@ -64,7 +63,6 @@ public class Enemy1 : EnemyStat
         }
         if(targetTransform == null)
         {
-            targetPlayer = null;
             Deplacement();
         }
     }
@@ -87,7 +85,7 @@ public class Enemy1 : EnemyStat
     {
         if(IsNotInCouroutine)
         {
-            if (targetPlayer is null || !GetDistance(targetTransform))
+            if (targetTransform == null || !GetDistance(targetTransform))
             {
                 StartCoroutine(WaitAPlayer());
             }

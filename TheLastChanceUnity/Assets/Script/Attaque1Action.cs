@@ -5,12 +5,6 @@ public class Attaque1Action : MonoBehaviour
 {
     Animator anim;
 
-    CapsuleCollider2D attackCollider;
-
-    private PlayerStats player;
-
-    private float timeToAct;
-
     private bool canAttack = true;
 
 
@@ -31,13 +25,12 @@ public class Attaque1Action : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        attackCollider = gameObject.GetComponent<CapsuleCollider2D>();
     }
 
 
     public void AttackLow()
     {
-        if(1==1 || canAttack ) // A travailler plus tard!!
+        if(1==1 || canAttack ) // A travailler plus tard!! (Jamais)
         {
             anim.SetBool("attack",true);
             canAttack = false;
@@ -56,7 +49,7 @@ public class Attaque1Action : MonoBehaviour
 
     public void AttackHight()
     {
-        if(canAttack || 1==1 ) // A travailler plus tard!!
+        if(canAttack || 1==1 ) // A travailler plus tard!!(Non plus)
         {
             canAttack = false;
             anim.SetBool("attack",true);
@@ -77,13 +70,4 @@ public class Attaque1Action : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log(2);
-    }
-
-
-
 }

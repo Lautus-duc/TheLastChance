@@ -13,8 +13,8 @@ public class FireCamp : MonoBehaviour
     [SerializeField]
     private Sprite Rocket3;
 
-
-    private int embers = 1000;
+    [SerializeField]
+    private float embers = 500;
 
     private int Part = 1;
 
@@ -118,7 +118,7 @@ public class FireCamp : MonoBehaviour
         return false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         embers -= damage;
         if (embers <= 0)

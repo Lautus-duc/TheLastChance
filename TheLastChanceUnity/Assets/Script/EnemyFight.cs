@@ -16,7 +16,9 @@ public class EnemyFight : EnemyStat
         }
         else if (collider.GetComponent<FireCamp>() != null)
         {
-            
+            FireCamp fireCamp = collider.GetComponent<FireCamp>();
+            fireCamp.TakeDamage(Damage);
+            Destroy(gameObject);
         }
     }
 }
