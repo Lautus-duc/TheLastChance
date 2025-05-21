@@ -10,6 +10,7 @@ TagManager:
   - Canva
   - Bullet
   - PlayerGameManager
+  - FireCamp
   layers:
   - Default
   - TransparentFX
