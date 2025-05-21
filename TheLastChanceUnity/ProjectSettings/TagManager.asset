@@ -11,6 +11,9 @@ TagManager:
   - Bullet
   - PlayerGameManager
   - FireCamp
+  - Crafter
+  - Kitchen
+  - Rocket
   layers:
   - Default
   - TransparentFX

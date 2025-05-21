@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7278299154088633157}
   - component: {fileID: 7505434131456119763}
   - component: {fileID: 5932902693132572180}
+  - component: {fileID: -7051052260819173047}
   m_Layer: 0
   m_Name: FireCamp
   m_TagString: FireCamp
@@ -148,3 +149,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.77}
   m_Size: {x: 1.52, y: 1}
   m_Direction: 1
+--- !u!114 &-7051052260819173047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564671864771966886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d701c35fc37479a4b90e72ea15d0710f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rocket1Instanciate: {fileID: 6778873441324429076, guid: e947244a5178e3940b6c88e6aa91b5b3, type: 3}
+  Rocket: {fileID: 0}
+  Rocket2: {fileID: -666232944909175049, guid: 1806a6ab3eab5f441b8a6f70aa8ea47e, type: 3}
+  Rocket3: {fileID: -7545288584465554673, guid: 59ec7c63b980c0d4ba69e464e07b10a1, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2532534112642668309}
   - component: {fileID: 5046723631509045420}
   - component: {fileID: 9148182503195502576}
+  - component: {fileID: -1186720958473152633}
   m_Layer: 0
   m_Name: veg5_1_0
   m_TagString: Untagged
@@ -134,3 +135,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.29, y: 0.74}
   m_EdgeRadius: 0
+--- !u!114 &-1186720958473152633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135452594502801936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75038ca693c52944a8d57c8e7042143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTypesList: 
+  haveWood: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4415084383294044281}
   - component: {fileID: 791408737760351641}
+  - component: {fileID: -3625394975305535381}
   m_Layer: 0
   m_Name: veg1_2_0
   m_TagString: Untagged
@@ -87,3 +88,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3625394975305535381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341806893347087774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75038ca693c52944a8d57c8e7042143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTypesList: 
+  haveWood: 0

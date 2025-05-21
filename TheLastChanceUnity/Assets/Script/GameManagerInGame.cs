@@ -46,7 +46,7 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     public List<GameObject> PlayerList;
     private bool playerAlreadyInstantiated = false;
     public GameObject playerInstanciate;
-    public int NumberOfPlayer = 0;
+    private int NumberOfPlayer = 0;
 
 
 
@@ -208,5 +208,10 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     public void TheEndOfGame()
     {
         Debug.Log("Fin!!");
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Perdu!!");
     }
 }

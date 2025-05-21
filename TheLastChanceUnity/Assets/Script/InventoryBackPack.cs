@@ -41,7 +41,7 @@ public class InventoryBackPack : MonoBehaviour
     }
     public bool CreateAShovel()
     {
-        if (wood < 10 || stone < 5) return false;
+        if (haveShovel || wood < 10 || stone < 5) return false;
         wood -= 10;
         stone -= 5;
         AddShovel();

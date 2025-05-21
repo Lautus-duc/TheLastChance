@@ -27,6 +27,8 @@ public class PlayerAttack : MonoBehaviourPun
 
     [SerializeField]
     GameObject DigParticle;
+    [SerializeField]
+    AudioClip ShovelSong;
 
 
     void Start()
@@ -54,6 +56,7 @@ public class PlayerAttack : MonoBehaviourPun
         }
         if (Input.GetMouseButtonDown(1) && playerMouvement.isHere)
         {
+            PlaySoundShovel();
             if (HaveShovel)
             {
                 DigWithShovel();
@@ -62,7 +65,7 @@ public class PlayerAttack : MonoBehaviourPun
             {
                 DigWithoutShovel();
             }
-            Hunger -= 2;
+            Hunger -= 1;
             if (Hunger <= 0)
             {
                 Hunger = 0;
@@ -84,6 +87,12 @@ public class PlayerAttack : MonoBehaviourPun
             }
         }
     }
+    private void PlaySoundShovel()
+    {
+        var audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(ShovelSong);
+    }
+
     private void starveToDeath()
     {
         gameManager.PlayerDeath(gameObject);
