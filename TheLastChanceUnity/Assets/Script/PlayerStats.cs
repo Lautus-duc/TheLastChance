@@ -2,26 +2,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float PV {get;set;}
-
-    public float maxPV {get;set;}
-
-    public float Damage {get;set;}
-
+    public float PV { get; set; }
+    public float maxHealth { get; set; }
+    public float Damage { get; set; }
     [SerializeField]
     private int numberOfThePlayer;
-    
-
-    public Canvas ownCanvas;
-
-    public int NumberOfThePlayer {get{return numberOfThePlayer ;} set{numberOfThePlayer=value ;} }
+    public int NumberOfThePlayer { get { return numberOfThePlayer; } set { numberOfThePlayer = value; } }
 
     public PlayerStats()
     {
-        maxPV = 100f;
-        PV = maxPV;
+        maxHealth = 100f;
+        PV = maxHealth;
         Damage = 25f;
     }
-    
+
 
 }

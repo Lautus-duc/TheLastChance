@@ -24,10 +24,10 @@ public class PlayerFight : PlayerStats
         if (PV <= 0)
         {
             PV = 0;
-            HP_Barre_Script.ChangeBarre(0, maxPV);
+            HP_Barre_Script.ChangeBarre(0, maxHealth);
             IsKill();
         }
-        HP_Barre_Script.ChangeBarre(PV, maxPV);
+        HP_Barre_Script.ChangeBarre(PV, maxHealth);
     }
 
     public void IsKill (){

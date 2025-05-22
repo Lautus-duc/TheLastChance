@@ -10,15 +10,17 @@ public class Attaque1Action : MonoBehaviour
 
 
     [SerializeField]
-    private float timeBetweenLow = 1f;
+    private float timeBetweenLow = 1.5f;
     [SerializeField]
-    private float timeBetweenHight = 0.5f;
+    private float timeBetweenHight = 1.5f;
 
     
     [SerializeField]
     private int typeOfAttack;
 
     public int TypeOfAttack{get {return typeOfAttack; } }
+    [SerializeField]
+    private PlayerMouvement playerMouvement;
 
 
 
@@ -30,7 +32,7 @@ public class Attaque1Action : MonoBehaviour
 
     public void AttackLow()
     {
-        if(1==1 || canAttack ) // A travailler plus tard!! (Jamais)
+        if(playerMouvement.isHere && canAttack ) // A travailler plus tard!! (Jamais)
         {
             anim.SetBool("attack",true);
             canAttack = false;
@@ -44,12 +46,11 @@ public class Attaque1Action : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenLow);
         canAttack = true;
         anim.SetBool("attack",false);
-        gameObject.SetActive(false);
     }
 
     public void AttackHight()
     {
-        if(canAttack || 1==1 ) // A travailler plus tard!!(Non plus)
+        if(canAttack && playerMouvement.isHere ) // A travailler plus tard!!(Non plus)
         {
             canAttack = false;
             anim.SetBool("attack",true);
@@ -67,7 +68,5 @@ public class Attaque1Action : MonoBehaviour
         
         anim.SetBool("attack",false);
         
-        gameObject.SetActive(false);
-
     }
 }

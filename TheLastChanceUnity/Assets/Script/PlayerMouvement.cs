@@ -53,10 +53,10 @@ public class PlayerMouvement : MonoBehaviourPun
             //Mouvement du Hero
             dir.x = Input.GetAxisRaw("Horizontal");
             dir.y = Input.GetAxisRaw("Vertical");
-            if ((dir.x == 1 || dir.x ==-1) && (dir.y == 1 || dir.y == -1))
+            if ((dir.x == 1 || dir.x == -1) && (dir.y == 1 || dir.y == -1))
             {
-                dir.x *= 3f/4f;
-                dir.y *= 3f/4f;
+                dir.x *= 3f / 4f;
+                dir.y *= 3f / 4f;
             }
             rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
             SetParam();

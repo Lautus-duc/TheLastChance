@@ -1,7 +1,12 @@
+using GeneralEnumList;
 using UnityEngine;
+
 public class CraftObject : InventoryItem
 {
-    public CraftObject(string name, Sprite icon) : this(name, icon, ItemType.CraftObject) {}
-    
-    public CraftObject(string name, Sprite icon, ItemType type) : base(name, icon, type) {}
+    public CraftObjectType CraftCategory { get; private set; }
+
+    public CraftObject(string name, Sprite icon, CraftObjectType craftCategory, GameObject worldPrefab) : base(name, icon, ItemType.CraftObject, worldPrefab)
+    {
+        CraftCategory = craftCategory;
+    }
 }

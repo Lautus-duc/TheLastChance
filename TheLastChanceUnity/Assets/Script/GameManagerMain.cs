@@ -3,22 +3,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerMain : MonoBehaviour
 {
-    public static GameManagerMain instance {private set; get;}
+    public static GameManagerMain instance { private set; get; }
 
     private void Awake()
     {
-        if(instance!= null){
+        if (instance != null)
+        {
             Destroy(this);
         }
-        else{
+        else
+        {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    public void ChangeScene(string sceneName){
+    public void ChangeScene(string sceneName)
+    {
         SceneManager.LoadScene(sceneName);
     }
-    public void Quit(){
+    public void Quit()
+    {
         Application.Quit();
     }
 }

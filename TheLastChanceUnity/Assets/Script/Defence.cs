@@ -1,7 +1,13 @@
 using UnityEngine;
+using GeneralEnumList;
+
 public class Defence : InventoryItem
 {
-    public Defence(string name, Sprite icon) : this(name, icon, ItemType.Defence) {}
-    
-    public Defence(string name, Sprite icon, ItemType type) : base(name, icon, type) {}
+    public int DefenceValue { get; private set; }
+
+    public Defence(string name, Sprite icon, int defenceValue, GameObject worldPrefab = null)
+        : base(name, icon, ItemType.Defence, worldPrefab)
+    {
+        DefenceValue = defenceValue;
+    }
 }

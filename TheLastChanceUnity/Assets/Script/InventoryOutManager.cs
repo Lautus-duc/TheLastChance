@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InventaryManager : MonoBehaviour
+public class InventoryOutManager : MonoBehaviour
 {
     private PlayerMouvement parentMouvement;
     void Start()

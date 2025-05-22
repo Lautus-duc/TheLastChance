@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using GeneralEnumList;
 
 public class Vegetation : MonoBehaviour
 {

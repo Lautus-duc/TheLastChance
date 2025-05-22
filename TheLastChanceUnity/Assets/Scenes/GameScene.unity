@@ -1122,7 +1122,7 @@ MonoBehaviour:
   globalLight2DScript: {fileID: 619394804}
   tilemapRanderScript: {fileID: 455345213}
   enemyManager: {fileID: 769837581}
-  timerDurationDay: 10
+  timerDurationDay: 1100
   timerDurationNight: 20
   isDay: 0
   switchTime: 0

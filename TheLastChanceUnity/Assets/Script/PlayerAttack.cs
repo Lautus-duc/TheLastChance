@@ -44,6 +44,7 @@ public class PlayerAttack : MonoBehaviourPun
         if (!photonView.IsMine || !playerMouvement.isHere) return;
         if (Input.GetMouseButtonDown(0) && playerMouvement.isHere)
         {
+            Debug.Log(1);
             Attack();
             Hunger -= 2;
             if (Hunger <= 0)
@@ -83,7 +84,6 @@ public class PlayerAttack : MonoBehaviourPun
             {
                 timer = 0;
                 isAttacking = false;
-                attackArea.SetActive(isAttacking);
             }
         }
     }
@@ -101,7 +101,6 @@ public class PlayerAttack : MonoBehaviourPun
     private void Attack()
     {
         isAttacking = true;
-        attackArea.SetActive(isAttacking);
     }
 
     private void DigWithoutShovel()

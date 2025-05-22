@@ -1,16 +1,17 @@
 
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    
+
     [SerializeField]
     private GameObject particleEnemyDeath;
 
     [SerializeField]
     private int numberOfVague = 3;
-    
+
     [SerializeField]
     private float timerBetweenEnnemi = 5f;
 
@@ -25,7 +26,7 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField]
     private Transform enemyPrefab;
-    
+
     [SerializeField]
     private Transform SpawnPoint;
 
@@ -35,25 +36,26 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         GameManager = GetComponent<GameManagerInGame>();
-        StartCoroutine("SpawnEnum");
+        StartCoroutine(SpawnEnum());
         //Pour la présentation
-        for (int i = 0; i<nRank; i++)
+        for (int i = 0; i < nRank; i++)
         {
             InstantiateEnemy(SpawnPoint);
         }
+        StartCoroutine(LoopForEnemiToPlayer());
     }
 
-    public IEnumerable SpawnEnum()
+    public IEnumerator SpawnEnum()
     {
         yield return new WaitForSeconds(6);
         while (numberOfVague > 0)
         {
             yield return new WaitForSeconds(timerBetweenEnnemi);
-            for (int i = 0; i<nRank; i++)
+            for (int i = 0; i < nRank; i++)
             {
                 InstantiateEnemy(SpawnPoint);
             }
-            numberOfVague-=1;
+            numberOfVague -= 1;
         }
 
     }
@@ -62,14 +64,14 @@ public class EnemyManager : MonoBehaviour
     {
         if (numberOfVague > 0)
         {
-            if(timer>Time.time-timerBetweenEnnemi)
+            if (timer > Time.time - timerBetweenEnnemi)
             {
-                for (int i = 0; i<nRank; i++)
+                for (int i = 0; i < nRank; i++)
                 {
                     InstantiateEnemy(SpawnPoint);
                 }
                 timer = Time.time;
-                numberOfVague-=1;
+                numberOfVague -= 1;
 
             }
         }
@@ -97,7 +99,7 @@ public class EnemyManager : MonoBehaviour
 
     private void InstantiateEnemyToFireCamp()
     {
-        if(fireCamp == null) fireCamp = GameObject.FindGameObjectWithTag("FireCamp").GetComponent<Transform>();
+        if (fireCamp == null) fireCamp = GameObject.FindGameObjectWithTag("FireCamp").GetComponent<Transform>();
         float x = Random.Range(-5f, 5f);
         if (x >= 0) x += 7;
         else x -= 7;
@@ -112,7 +114,7 @@ public class EnemyManager : MonoBehaviour
 
     public void WaveForNight(int numberOfwave, int numberOfEnemi)
     {
-        for(int i = 0; i<nRank*2;i++) InstantiateEnemyToFireCamp();
+        for (int i = 0; i < nRank * 2; i++) InstantiateEnemyToFireCamp();
     }
 
 
@@ -149,6 +151,16 @@ public class EnemyManager : MonoBehaviour
         float x1 = GetComponent<Transform>().position.x;
         float y1 = GetComponent<Transform>().position.y;
 
-        return (x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2);
+        return (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+    }
+
+
+
+    private IEnumerator LoopForEnemiToPlayer()
+    {
+        yield return new WaitForSeconds(6f + Random.Range(0,5));
+        var pls = GameObject.FindGameObjectsWithTag("Player");
+        if (pls.Count() > 0) InstantiateEnemyToPlayer(pls[Random.Range(0, pls.Count() - 1)].GetComponent<Transform>());
+        LoopForEnemiToPlayer();
     }
 }
