@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,7 +41,13 @@ public class MenuPrincipal : MonoBehaviour
         OpenOnePanel(_type,true);
     }
 
-    public void ChangeScene(string sceneName){
+    public void DisconnectInBack()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
+    public void ChangeScene(string sceneName)
+    {
         managager.ChangeScene(sceneName);
     }
 

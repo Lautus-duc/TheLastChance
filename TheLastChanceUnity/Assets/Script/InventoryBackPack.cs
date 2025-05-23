@@ -24,7 +24,6 @@ public class InventoryBackPack : MonoBehaviour
 
     public void AddFruit(FruitType fruitType)
     {
-        Debug.Log(fruitType);
         if (!listOfFruit.ContainsKey(fruitType)) listOfFruit[fruitType] = 1;
         else listOfFruit[fruitType] += 1;
     }

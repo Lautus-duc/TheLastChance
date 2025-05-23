@@ -122,11 +122,9 @@ public class PlayerAttack : MonoBehaviourPun
         float i = Random.Range(0f, 100.0f);
         if (i < 80.0f)
         {
-            Debug.Log("Nothing");
         }
         else
         {
-            Debug.Log("Stone");
             inventoryBackPack.Stone += 1;
         }
         Destroy(particle, 1f);
@@ -140,16 +138,13 @@ public class PlayerAttack : MonoBehaviourPun
         float i = Random.Range(0f, 100.0f);
         if (i < 40.0f)
         {
-            Debug.Log("Nothing");
         }
         else if (i < 95.0f)
         {
-            Debug.Log("Stone");
             inventoryBackPack.Stone += 1;
         }
         else
         {
-            Debug.Log("Iron");
             inventoryBackPack.Iron += 1;
         }
         Destroy(particle, 2f);
