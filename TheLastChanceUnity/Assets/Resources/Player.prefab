@@ -7769,6 +7769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
+  timeToSwallow: 3
   playerMouvement: {fileID: 7522232202458655388}
   HungerBarre: {fileID: 6551267934906405720}
   gameManager: {fileID: 0}
