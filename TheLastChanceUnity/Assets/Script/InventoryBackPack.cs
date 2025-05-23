@@ -111,19 +111,18 @@ public class InventoryBackPack : MonoBehaviour
     public bool ConsomFruit(FruitType fruitType)
     {
 
-        if (GetFruit(fruitType) > 0)
+        if (GetFruit(fruitType) > 0 && playerAttack.Eat(6))
         {
             AddFruit(fruitType,-1);
-            playerAttack.Eat(6);
             return true;
         }
         else return false;
     }
     public bool ConsomFruit()
     {
-        if (ConsomFruit(FruitType.Apple))
+        if (GetFruit(FruitType.Apple) > 0 && playerAttack.Eat(3))
         {
-            playerAttack.Eat(3);
+            AddFruit(FruitType.Apple,-1);
             return true;
         }
         return false;

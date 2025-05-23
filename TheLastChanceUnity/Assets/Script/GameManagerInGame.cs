@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManagerInGame : MonoBehaviourPunCallbacks
 {
@@ -227,10 +228,12 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     public void TheEndOfGame()
     {
         Debug.Log("Fin!!");
+        SceneManager.LoadScene("GoodEndingScene");
     }
 
     public void GameOver()
     {
         Debug.Log("Perdu!!");
+        SceneManager.LoadScene("BadEndingScene");
     }
 }

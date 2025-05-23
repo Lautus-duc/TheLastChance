@@ -15,10 +15,18 @@ public class Attaque1Area : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<EnemyStat>() != null)
+        if (collider.GetComponent<Enemy1>() != null)
         {
-            EnemyStat enemyStat = collider.GetComponent<EnemyStat>();
-            if (enemyStat.RecevoirDegat(damage)!=false)
+            Enemy1 enemyStat = collider.GetComponent<Enemy1>();
+            if (enemyStat.TakeDamage(damage)!=false)
+            {
+                inventoryBackPack.Gold += Random.Range(0, 2);
+            }
+        }
+        else if (collider.GetComponent<Enemy2>() != null)
+        {
+            Enemy2 enemyStat = collider.GetComponent<Enemy2>();
+            if (enemyStat.TakeDamage(damage)!=false)
             {
                 inventoryBackPack.Gold += Random.Range(0, 2);
             }
@@ -35,7 +43,7 @@ public class Attaque1Area : MonoBehaviour
             {
                 inventoryBackPack.Wood += 1;
             }
-            inventoryBackPack.AddFruit(fruit);
+            if(Random.Range(0,50)<3)inventoryBackPack.AddFruit(fruit);
         }
         else if (collider.tag == "Crafter")
         {

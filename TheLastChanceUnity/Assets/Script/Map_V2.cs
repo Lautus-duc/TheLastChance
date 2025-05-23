@@ -38,7 +38,6 @@ public class Map_V2 : MonoBehaviour
     public GameObject campFire;
     public GameObject kitchen;
     public GameObject crafter;
-    public GameObject rocket;
 
     [Header("Autres")]
     public GameObject tilePrefab;
@@ -194,8 +193,6 @@ public class Map_V2 : MonoBehaviour
         KitchenInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(KitchenInstanciate.GetComponent<Transform>().position.y);
         Transform CrafterInstanciate = Instantiate(crafter.GetComponent<Transform>(), new Vector3(3f, 6f, 0), Quaternion.identity);
         CrafterInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(CrafterInstanciate.GetComponent<Transform>().position.y);
-        Transform RocketInstanciate = Instantiate(rocket.GetComponent<Transform>(), new Vector3(3f, 6f, 0), Quaternion.identity);
-        RocketInstanciate.GetComponent<SpriteRenderer>().sortingOrder = -(int)Math.Floor(RocketInstanciate.GetComponent<Transform>().position.y);
     }
 
     void Start ()

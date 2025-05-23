@@ -5,22 +5,16 @@ using System.Collections;
 public class Enemy1 : EnemyStat
 {
     private Transform EnemyTransform;
-
     public bool IsNotInCouroutine = true;
-
     public GameObject targetPlayer;
-    public Transform targetTransform;
     private Animator anim;
     public Vector2 dir;
 
-    [SerializeField]
-    private float distanceAccessible = 10f;
+    [SerializeField] private float distanceAccessible = 10f;
 
-    [SerializeField]
-    private string typeOfTarget = "Player";
+    [SerializeField] private string typeOfTarget = "Player";
 
-    [SerializeField]
-    private float speed = 1f;
+    [SerializeField] private float speed = 1f;
 
     private float x1;
     private float y1;
@@ -117,6 +111,12 @@ public class Enemy1 : EnemyStat
                 else
                 {
                     dir.y = 0;
+                }
+
+                if (dir.x != 0 && dir.y != 0)
+                {
+                    dir.x *= 0.75f;
+                    dir.y *= 0.75f;
                 }
                 rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
             }

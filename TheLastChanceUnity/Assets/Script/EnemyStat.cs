@@ -7,17 +7,12 @@ public class EnemyStat : MonoBehaviour
 {
 
 
-    public bool IsAlive { get{ return PV>0; } }
-
-    [SerializeField]
-    public float PV{get;set;}
-    
-    [SerializeField]
-    public float MaxPV{get;set;}
-
-    public float Damage{get;set;}
-
-    public float Speed{get;set;}
+    public Transform targetTransform;
+    public bool IsAlive { get{ return Health>0; } }
+    public float Health;
+    public float MaxHealth;
+    public float Damage;
+    public float Speed;
     
     [SerializeField]
     private EnemyManager enemyManager;
@@ -25,7 +20,7 @@ public class EnemyStat : MonoBehaviour
     public EnemyManager EnemyManager{get{return enemyManager; } set{enemyManager = value ;} }
 
     protected Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -33,16 +28,10 @@ public class EnemyStat : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public EnemyStat()
-    {
-        PV = 250f;
-        Damage = 20;
-    }
 
-
-    public bool RecevoirDegat(float degat)
+    public bool TakeDamage(float degat)
     {
-        PV -= degat;
+        Health -= degat;
         if (!IsAlive)
         {
             enemyManager.ParticleEnemyDeath(GetComponent<Transform>());

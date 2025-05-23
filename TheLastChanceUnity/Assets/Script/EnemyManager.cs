@@ -25,7 +25,10 @@ public class EnemyManager : MonoBehaviour
     private Transform enemyInstanciate;
 
     [SerializeField]
-    private Transform enemyPrefab;
+    private Transform enemy1Prefab;
+
+    [SerializeField]
+    private Transform enemy2Prefab;
 
     [SerializeField]
     private Transform SpawnPoint;
@@ -80,8 +83,16 @@ public class EnemyManager : MonoBehaviour
 
     private void InstantiateEnemy(Transform spawnPoint)
     {
-        enemyInstanciate = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-        enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        if (Random.Range(0, 8) > 1)
+        {
+            enemyInstanciate = Instantiate(enemy1Prefab, spawnPoint.position, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        }
+        else
+        {
+            enemyInstanciate = Instantiate(enemy2Prefab, spawnPoint.position, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy2>().EnemyManager = GetComponent<EnemyManager>();
+        }
     }
     private void InstantiateEnemyToPlayer(Transform player)
     {
@@ -92,9 +103,18 @@ public class EnemyManager : MonoBehaviour
         if (y >= 0) y += 7;
         else y -= 7;
         Vector3 nextPos = new Vector3(player.position.x + x, player.position.y + y);
-        enemyInstanciate = Instantiate(enemyPrefab, nextPos, Quaternion.identity);
-        enemyInstanciate.GetComponent<Enemy1>().targetTransform = player;
-        enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        if (Random.Range(0, 8) > 1)
+        {
+            enemyInstanciate = Instantiate(enemy1Prefab, nextPos, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy1>().targetTransform = player;
+            enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        }
+        else
+        {
+            enemyInstanciate = Instantiate(enemy2Prefab, nextPos, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy2>().targetTransform = player;
+            enemyInstanciate.GetComponent<Enemy2>().EnemyManager = GetComponent<EnemyManager>();
+        }
     }
 
     private void InstantiateEnemyToFireCamp()
@@ -107,9 +127,18 @@ public class EnemyManager : MonoBehaviour
         if (y >= 0) y += 7;
         else y -= 7;
         Vector3 nextPos = new Vector3(fireCamp.position.x + x, fireCamp.position.y + y);
-        enemyInstanciate = Instantiate(enemyPrefab, nextPos, Quaternion.identity);
-        enemyInstanciate.GetComponent<Enemy1>().targetTransform = fireCamp;
-        enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        if (Random.Range(0, 8) > 1)
+        {
+            enemyInstanciate = Instantiate(enemy1Prefab, nextPos, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy1>().targetTransform = fireCamp;
+            enemyInstanciate.GetComponent<Enemy1>().EnemyManager = GetComponent<EnemyManager>();
+        }
+        else
+        {
+            enemyInstanciate = Instantiate(enemy2Prefab, nextPos, Quaternion.identity);
+            enemyInstanciate.GetComponent<Enemy2>().targetTransform = fireCamp;
+            enemyInstanciate.GetComponent<Enemy2>().EnemyManager = GetComponent<EnemyManager>();
+        }
     }
 
     public void WaveForNight(int numberOfwave, int numberOfEnemi)

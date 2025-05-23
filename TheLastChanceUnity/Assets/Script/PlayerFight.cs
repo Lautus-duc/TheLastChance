@@ -20,14 +20,14 @@ public class PlayerFight : PlayerStats
 
     public void GetDammages(float degatReceve)
     {
-        PV -= degatReceve;
-        if (PV <= 0)
+        Health -= degatReceve;
+        if (Health <= 0)
         {
-            PV = 0;
+            Health = 0;
             HP_Barre_Script.ChangeBarre(0, maxHealth);
             IsKill();
         }
-        HP_Barre_Script.ChangeBarre(PV, maxHealth);
+        HP_Barre_Script.ChangeBarre(Health, maxHealth);
     }
 
     public void IsKill (){
@@ -36,6 +36,6 @@ public class PlayerFight : PlayerStats
     
     public void GetHeal(float healReceve)
     {
-        PV += healReceve;
+        Health += healReceve;
     }
 }

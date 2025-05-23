@@ -23,7 +23,6 @@ public class PlayerMouvement : MonoBehaviourPun
     {
         if (!photonView.IsMine)
         {
-            Debug.Log("photonview isn't mine");
             foreach (var comp in componentsToDisable)
             {
                 comp.enabled = false;
@@ -31,7 +30,6 @@ public class PlayerMouvement : MonoBehaviourPun
         }
         else
         {
-            Debug.Log("photonview is mine");
             Camera cam = GetComponentInChildren<Camera>();
             cam.gameObject.SetActive(true);
 

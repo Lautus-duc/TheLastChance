@@ -163,12 +163,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293610a1cceaa4b43a05727580b992a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
+  Health: 250
+  MaxHealth: 0
+  Damage: 20
+  Speed: 0
   enemyManager: {fileID: 0}
   IsNotInCouroutine: 1
   targetPlayer: {fileID: 0}
-  targetTransform: {fileID: 0}
   dir: {x: 0, y: 0}
   distanceAccessible: 30
+  typeOfTarget: Player
   speed: 2
 --- !u!114 &8610810704907577374
 MonoBehaviour:
@@ -182,6 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ec2521a49b008479192499e624b0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
+  Health: 250
+  MaxHealth: 250
+  Damage: 20
+  Speed: 1
   enemyManager: {fileID: 0}
   AttackCollider: {fileID: 8690378855731230977}
 --- !u!50 &5284687120213306861

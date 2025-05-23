@@ -49,7 +49,7 @@ public class PlayerAttack : MonoBehaviourPun
         if (Input.GetMouseButtonDown(0) && playerMouvement.isHere)
         {
             Attack();
-            Hunger -= 0.75f;
+            Hunger -= 1f;
             if (Hunger <= 0)
             {
                 Hunger = 0;
@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviourPun
             {
                 DigWithoutShovel();
             }
-            Hunger -= 0.5f;
+            Hunger -= 1.5f;
             if (Hunger <= 0)
             {
                 Hunger = 0;
@@ -98,23 +98,28 @@ public class PlayerAttack : MonoBehaviourPun
             }
         }
     }
-    public void Eat()
+    public bool Eat()
     {
-        if(canEat)
-        { canEat = false;
-        inventoryBackPack.ConsomFruit();
-        Hunger += 6;
-        HungerBarre.ChangeBarre(Hunger, MaxHunger);
-        StartCoroutine(CanEat());}
+        if (canEat)
+        {
+            canEat = false;
+            Hunger += 6;
+            HungerBarre.ChangeBarre(Hunger, MaxHunger);
+            StartCoroutine(CanEat());
+            return true;
+        }
+        return false;
     }
-    public void Eat(float hunger)
+    public bool Eat(float hunger)
     {
-        if(canEat)
-        { canEat = false;
-        inventoryBackPack.ConsomFruit();
-        Hunger += hunger;
-        HungerBarre.ChangeBarre(Hunger, MaxHunger);
-        StartCoroutine(CanEat());}
+        if (canEat)
+        {
+            canEat = false;
+            Hunger += hunger;
+            HungerBarre.ChangeBarre(Hunger, MaxHunger);
+            StartCoroutine(CanEat()); return true;
+        }
+        return false;
     }
     private void PlaySoundShovel()
     {

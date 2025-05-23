@@ -964,7 +964,6 @@ MonoBehaviour:
   campFire: {fileID: 564671864771966886, guid: 5d0c970634e9b50458277ba8dc0dfe17, type: 3}
   kitchen: {fileID: 7754950763092653424, guid: 1f4b340bccdc64840a2301f612d633e8, type: 3}
   crafter: {fileID: 3476572105908717408, guid: 9a356234950d28d4fb4845f11ebd5b4d, type: 3}
-  rocket: {fileID: 0}
   tilePrefab: {fileID: 1658497098786634310, guid: 7cd2362b9521fac4381b1c661ce675d3, type: 3}
   tileMapGenerate: {fileID: 455345211}
   tilemapColRend: {fileID: 1382559025}
@@ -1033,7 +1032,7 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.7283019, g: 0.26796004, b: 0.26796004, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
@@ -1122,7 +1121,7 @@ MonoBehaviour:
   globalLight2DScript: {fileID: 619394804}
   tilemapRanderScript: {fileID: 455345213}
   enemyManager: {fileID: 769837581}
-  timerDurationDay: 1100
+  timerDurationDay: 100
   timerDurationNight: 20
   isDay: 0
   switchTime: 0
@@ -1256,7 +1255,8 @@ MonoBehaviour:
   numberOfVague: 3
   timerBetweenEnnemi: 5
   nRank: 1
-  enemyPrefab: {fileID: 8487481940128316140, guid: ac972ad168c291c48b2954fa9162ea6e, type: 3}
+  enemy1Prefab: {fileID: 8487481940128316140, guid: ac972ad168c291c48b2954fa9162ea6e, type: 3}
+  enemy2Prefab: {fileID: 2171793739338247826, guid: 2a57a3616bb30a04b8bfbd3df01d0593, type: 3}
   SpawnPoint: {fileID: 1628274702}
   GameManager: {fileID: 0}
 --- !u!114 &769837582

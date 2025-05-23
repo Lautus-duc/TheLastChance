@@ -257,19 +257,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1281366414096506972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &641447637495903290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,19 +394,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6004940656467023579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5816269162720751487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1115,7 @@ GameObject:
   - component: {fileID: 6326423495814575296}
   - component: {fileID: 1718256341298894043}
   - component: {fileID: 6964834073886156561}
-  - component: {fileID: 7941256785345018460}
+  - component: {fileID: 8441000446469710290}
   m_Layer: 5
   m_Name: InventoryToggleButton1.5)
   m_TagString: Untagged
@@ -1249,8 +1225,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 8441000446469710290}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -1276,7 +1252,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 5223791332589140768}
   inventoryManager: {fileID: 0}
---- !u!114 &7941256785345018460
+--- !u!114 &8441000446469710290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1935,7 +1911,7 @@ GameObject:
   - component: {fileID: 566136314309361697}
   - component: {fileID: 8257607726623961967}
   - component: {fileID: 6519214355195162444}
-  - component: {fileID: 281144811338720319}
+  - component: {fileID: 3081935824182399593}
   m_Layer: 5
   m_Name: InventoryToggleButton1.4)
   m_TagString: Untagged
@@ -2045,8 +2021,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 3081935824182399593}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -2072,7 +2048,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 2188578484948281806}
   inventoryManager: {fileID: 0}
---- !u!114 &281144811338720319
+--- !u!114 &3081935824182399593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2346,19 +2322,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3195700192693775386}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6064449823668190808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2715,19 +2679,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1407578610446540698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5841253258181476116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3584,7 +3536,7 @@ GameObject:
   - component: {fileID: 3398602953651153988}
   - component: {fileID: 2850955734002681909}
   - component: {fileID: 7952125959568260014}
-  - component: {fileID: 8505735155574210824}
+  - component: {fileID: 8326643631030579926}
   m_Layer: 5
   m_Name: InventoryToggleButton1.1) (1)
   m_TagString: Untagged
@@ -3694,8 +3646,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8505735155574210824}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 8326643631030579926}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -3721,7 +3673,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 4403170928223736411}
   inventoryManager: {fileID: 0}
---- !u!114 &8505735155574210824
+--- !u!114 &8326643631030579926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4136,7 +4088,7 @@ GameObject:
   - component: {fileID: 4554771535063400106}
   - component: {fileID: 4111490228318887111}
   - component: {fileID: 3256074707865205587}
-  - component: {fileID: 2604224603683921525}
+  - component: {fileID: 799903353455098572}
   m_Layer: 5
   m_Name: InventoryToggleButton1.0) (1)
   m_TagString: Untagged
@@ -4246,8 +4198,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 799903353455098572}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -4273,7 +4225,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 2553040885573748196}
   inventoryManager: {fileID: 0}
---- !u!114 &2604224603683921525
+--- !u!114 &799903353455098572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4569,19 +4521,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2757212566767147242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4880130871542437118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,19 +4794,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9004843000559238147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1271258246159467120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4895,7 +4823,7 @@ GameObject:
   - component: {fileID: 8246244559964959145}
   - component: {fileID: 6650550799183117025}
   - component: {fileID: 5738917474580607853}
-  - component: {fileID: 746414289005074481}
+  - component: {fileID: 8521698692400654653}
   m_Layer: 5
   m_Name: InventoryToggleButton1.2)
   m_TagString: Untagged
@@ -5005,8 +4933,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 8521698692400654653}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -5032,7 +4960,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 8855945055922832884}
   inventoryManager: {fileID: 0}
---- !u!114 &746414289005074481
+--- !u!114 &8521698692400654653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5170,19 +5098,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8777564299091662749}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1862216086108469681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5859,19 +5775,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6318781824657275086}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1770342700445723866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6261,19 +6165,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5722818892449697283}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &404400801450509572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6302,7 +6194,7 @@ GameObject:
   - component: {fileID: 2939167829408156054}
   - component: {fileID: 3589712926628655270}
   - component: {fileID: 5028933161093464198}
-  - component: {fileID: 7276962370762807167}
+  - component: {fileID: 827342847787599463}
   m_Layer: 5
   m_Name: InventoryToggleButton1.3)
   m_TagString: Untagged
@@ -6412,8 +6304,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 827342847787599463}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -6439,7 +6331,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 5219944473591852530}
   inventoryManager: {fileID: 0}
---- !u!114 &7276962370762807167
+--- !u!114 &827342847787599463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6889,7 +6781,7 @@ GameObject:
   - component: {fileID: 362896186033862192}
   - component: {fileID: 2524335594641587387}
   - component: {fileID: 223870569102179005}
-  - component: {fileID: 7723758563186423103}
+  - component: {fileID: 162989168803065199}
   m_Layer: 5
   m_Name: InventoryToggleButton1.0)
   m_TagString: Untagged
@@ -6999,8 +6891,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 162989168803065199}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -7026,7 +6918,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 7998393187347466930}
   inventoryManager: {fileID: 0}
---- !u!114 &7723758563186423103
+--- !u!114 &162989168803065199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8450,19 +8342,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5753671227859348498}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3243742269664538214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8977,7 +8857,7 @@ GameObject:
   - component: {fileID: 7923635044454727651}
   - component: {fileID: 956339041513839464}
   - component: {fileID: 5200935634085900774}
-  - component: {fileID: 7984196317014739721}
+  - component: {fileID: 3294001426907546317}
   m_Layer: 5
   m_Name: InventoryToggleButton1.1)
   m_TagString: Untagged
@@ -9087,8 +8967,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7941256785345018460}
-        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+      - m_Target: {fileID: 3294001426907546317}
+        m_TargetAssemblyTypeName: OthersSlotUI, Assembly-CSharp
         m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
@@ -9114,7 +8994,7 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 3244506962875427695}
   inventoryManager: {fileID: 0}
---- !u!114 &7984196317014739721
+--- !u!114 &3294001426907546317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

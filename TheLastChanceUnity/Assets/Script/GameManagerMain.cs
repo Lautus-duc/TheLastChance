@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerMain : MonoBehaviour
 {
     public static GameManagerMain instance { private set; get; }
+    public GameObject videoCinematicEntrance;
 
     private void Awake()
     {
@@ -24,5 +25,10 @@ public class GameManagerMain : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    
+    public void LanceCinematic()
+    {
+        videoCinematicEntrance.SetActive(true);
     }
 }
