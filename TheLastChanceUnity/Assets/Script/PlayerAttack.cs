@@ -98,6 +98,24 @@ public class PlayerAttack : MonoBehaviourPun
             }
         }
     }
+    public void Eat()
+    {
+        if(canEat)
+        { canEat = false;
+        inventoryBackPack.ConsomFruit();
+        Hunger += 6;
+        HungerBarre.ChangeBarre(Hunger, MaxHunger);
+        StartCoroutine(CanEat());}
+    }
+    public void Eat(float hunger)
+    {
+        if(canEat)
+        { canEat = false;
+        inventoryBackPack.ConsomFruit();
+        Hunger += hunger;
+        HungerBarre.ChangeBarre(Hunger, MaxHunger);
+        StartCoroutine(CanEat());}
+    }
     private void PlaySoundShovel()
     {
         var audio = GetComponent<AudioSource>();

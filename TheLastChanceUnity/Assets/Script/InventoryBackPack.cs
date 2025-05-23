@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InventoryBackPack : MonoBehaviour
 {
     [Header("In Inventary")]
+    [Header("Materails")]
     [SerializeField]
     int wood;
     [SerializeField]
@@ -17,35 +18,115 @@ public class InventoryBackPack : MonoBehaviour
     int gold;
     [SerializeField]
     bool haveShovel = false;
+    
+    [Header("Fruit")]
     [SerializeField]
-    public Dictionary<FruitType, int> listOfFruit = new Dictionary<FruitType, int>();
+    public int Apple = 0;
+    [SerializeField]
+    public int Banana = 0;
+    [SerializeField]
+    public int Strawberry = 0;
+    [SerializeField]
+    public int Raspberry = 0;
+    [SerializeField]
+    public int Cherry = 0;
+    [SerializeField]
+    public int Avocado = 0;
+    [SerializeField]
+    public int Wheat = 0;
+    [SerializeField]
+    public int Lemon = 0;
+
     [SerializeField]
     Image shovelImage;
+    [SerializeField]
+    public Sprite nonIcon;
+    [SerializeField]
+    PlayerAttack playerAttack;
 
     public void AddFruit(FruitType fruitType)
     {
-        if (!listOfFruit.ContainsKey(fruitType)) listOfFruit[fruitType] = 1;
-        else listOfFruit[fruitType] += 1;
+        AddFruit(fruitType, 1);
     }
+
+    private void AddFruit(FruitType fruitType,int value)
+    {
+        switch (fruitType)
+        {
+            case FruitType.Apple:
+                Apple += value;
+                break;
+            case FruitType.Banana:
+                Banana += value;
+                break;
+            case FruitType.Strawberry:
+                Strawberry += value;
+                break;
+            case FruitType.Raspberry:
+                Raspberry += value;
+                break;
+            case FruitType.Cherry:
+                Cherry += value;
+                break;
+            case FruitType.Avocado:
+                Avocado += value;
+                break;
+            case FruitType.Wheat:
+                Wheat += value;
+                break;
+            case FruitType.Lemon:
+                Lemon += value;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public int GetFruit(FruitType fruitType)
+    {
+        switch (fruitType)
+        {
+            case FruitType.Apple:
+                return Apple;
+            case FruitType.Banana:
+                return Banana;
+            case FruitType.Strawberry:
+                return Strawberry;
+            case FruitType.Raspberry:
+                return Raspberry;
+            case FruitType.Cherry:
+                return Cherry;
+            case FruitType.Avocado:
+                return Avocado;
+            case FruitType.Wheat:
+                return Wheat;
+            case FruitType.Lemon:
+                return Lemon;
+            default:
+                return 0;
+        }
+    }
+    
 
     public bool ConsomFruit(FruitType fruitType)
     {
-        if (listOfFruit.ContainsKey(fruitType) && listOfFruit[fruitType] > 0)
+
+        if (GetFruit(fruitType) > 0)
         {
-            listOfFruit[fruitType] -= 1;
-            if (listOfFruit[fruitType] == 0) listOfFruit.Remove(fruitType);
+            AddFruit(fruitType,-1);
+            playerAttack.Eat(6);
             return true;
         }
         else return false;
     }
     public bool ConsomFruit()
     {
-        if (listOfFruit.Count>0)
+        if (ConsomFruit(FruitType.Apple))
         {
-            ConsomFruit(listOfFruit.First(x=>x.Value>0).Key);
+            playerAttack.Eat(3);
             return true;
         }
-        else return false;
+        return false;
     }
 
     public int Wood

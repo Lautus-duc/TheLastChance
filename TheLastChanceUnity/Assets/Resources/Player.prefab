@@ -171,9 +171,9 @@ RectTransform:
   - {fileID: 2843930671738248720}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -606.00006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: -193.00006}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1836468501390102511
@@ -320,9 +320,9 @@ RectTransform:
   - {fileID: 2836333619768283493}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -250, y: -459.00003}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: -46.00003}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7153717739300998509
@@ -1139,6 +1139,7 @@ GameObject:
   - component: {fileID: 6326423495814575296}
   - component: {fileID: 1718256341298894043}
   - component: {fileID: 6964834073886156561}
+  - component: {fileID: 7941256785345018460}
   m_Layer: 5
   m_Name: InventoryToggleButton1.5)
   m_TagString: Untagged
@@ -1161,9 +1162,9 @@ RectTransform:
   - {fileID: 4008908125698118841}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6604612365184786063
@@ -1248,13 +1249,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1267,7 +1268,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569283302774794527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -1275,6 +1276,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 5223791332589140768}
   inventoryManager: {fileID: 0}
+--- !u!114 &7941256785345018460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569283302774794527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 3
+  icon: {fileID: -1984992926974994423, guid: f2d9252966816e34e92d2466287ef601, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &1859493347697424690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1772,7 @@ MonoBehaviour:
   BarreTransform: {fileID: 6923821641519433897}
   BarreImage: {fileID: 9191988415627978584}
   BarreColor: {r: 0.40000004, g: 0.7372549, b: 0.37254903, a: 0}
+  value: 100
   HeightBarre: 100
 --- !u!1 &3762171242605665673
 GameObject:
@@ -1790,9 +1809,9 @@ RectTransform:
   - {fileID: 2582050292309957523}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -150, y: -110}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: 303}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6932098725091575178
@@ -1916,6 +1935,7 @@ GameObject:
   - component: {fileID: 566136314309361697}
   - component: {fileID: 8257607726623961967}
   - component: {fileID: 6519214355195162444}
+  - component: {fileID: 281144811338720319}
   m_Layer: 5
   m_Name: InventoryToggleButton1.4)
   m_TagString: Untagged
@@ -1938,9 +1958,9 @@ RectTransform:
   - {fileID: 6215206809419202210}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7029249449851663133
@@ -2025,13 +2045,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2044,7 +2064,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832876347400024050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -2052,6 +2072,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 2188578484948281806}
   inventoryManager: {fileID: 0}
+--- !u!114 &281144811338720319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832876347400024050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 7
+  icon: {fileID: 8025649199667744028, guid: 7e1cfe68d78da28499b1599700a61314, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &3963521277196169519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,9 +2260,9 @@ RectTransform:
   - {fileID: 1616812088285913199}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -100, y: -606.00006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: -193.00006}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1250387801685524640
@@ -2592,9 +2629,9 @@ RectTransform:
   - {fileID: 2375948618056682746}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -250, y: -606.00006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: -193.00006}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3319337465249994406
@@ -2741,9 +2778,9 @@ RectTransform:
   - {fileID: 2103235461025167794}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -110}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: 303}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8038524832256481094
@@ -3547,6 +3584,7 @@ GameObject:
   - component: {fileID: 3398602953651153988}
   - component: {fileID: 2850955734002681909}
   - component: {fileID: 7952125959568260014}
+  - component: {fileID: 8505735155574210824}
   m_Layer: 5
   m_Name: InventoryToggleButton1.1) (1)
   m_TagString: Untagged
@@ -3569,9 +3607,9 @@ RectTransform:
   - {fileID: 2959255101148011346}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -400, y: -459.00003}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: -46.00003}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6024019444483884603
@@ -3656,13 +3694,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8505735155574210824}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3675,7 +3713,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5956671748690142561}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -3683,6 +3721,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 4403170928223736411}
   inventoryManager: {fileID: 0}
+--- !u!114 &8505735155574210824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956671748690142561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 6
+  icon: {fileID: 7720945941185500035, guid: 5be5f1643f96bcd4db142f079148be0a, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &5982022265605012834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4136,7 @@ GameObject:
   - component: {fileID: 4554771535063400106}
   - component: {fileID: 4111490228318887111}
   - component: {fileID: 3256074707865205587}
+  - component: {fileID: 2604224603683921525}
   m_Layer: 5
   m_Name: InventoryToggleButton1.0) (1)
   m_TagString: Untagged
@@ -4103,9 +4159,9 @@ RectTransform:
   - {fileID: 6532395003925948481}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -550, y: -459}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -550, y: -46}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3915715931875681711
@@ -4190,13 +4246,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4209,7 +4265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6252161458850359592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -4217,6 +4273,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 2553040885573748196}
   inventoryManager: {fileID: 0}
+--- !u!114 &2604224603683921525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252161458850359592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 2
+  icon: {fileID: 1775669009216684005, guid: 4980c1929c19b2641a8e00347f7edd1e, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &6342980567565739551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4410,9 +4483,9 @@ RectTransform:
   - {fileID: 1931011944074113314}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -100, y: -459.00003}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: -46.00003}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1408876763653940898
@@ -4695,9 +4768,9 @@ RectTransform:
   - {fileID: 3085492068941911320}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -400, y: -606.00006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: -193.00006}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9027059792032342882
@@ -4822,6 +4895,7 @@ GameObject:
   - component: {fileID: 8246244559964959145}
   - component: {fileID: 6650550799183117025}
   - component: {fileID: 5738917474580607853}
+  - component: {fileID: 746414289005074481}
   m_Layer: 5
   m_Name: InventoryToggleButton1.2)
   m_TagString: Untagged
@@ -4844,9 +4918,9 @@ RectTransform:
   - {fileID: 6313632863540700646}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -250, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4936199966224173295
@@ -4931,13 +5005,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4950,7 +5024,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6712184311200772842}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -4958,6 +5032,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 8855945055922832884}
   inventoryManager: {fileID: 0}
+--- !u!114 &746414289005074481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712184311200772842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 1
+  icon: {fileID: 7381965769198725172, guid: c1bc79a98d57d784ea67f7054951fcec, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &6862960804288419936
 GameObject:
   m_ObjectHideFlags: 0
@@ -4993,9 +5084,9 @@ RectTransform:
   - {fileID: 4681423987204515086}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -606.00006}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -193.00006}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8694483146644495478
@@ -5682,9 +5773,9 @@ RectTransform:
   - {fileID: 8842220916128051619}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: -459.00003}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: -46.00003}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &421893704885874902
@@ -6084,9 +6175,9 @@ RectTransform:
   - {fileID: 1514819457416274052}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -459.00003}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: -46.00003}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8070741508458784486
@@ -6211,6 +6302,7 @@ GameObject:
   - component: {fileID: 2939167829408156054}
   - component: {fileID: 3589712926628655270}
   - component: {fileID: 5028933161093464198}
+  - component: {fileID: 7276962370762807167}
   m_Layer: 5
   m_Name: InventoryToggleButton1.3)
   m_TagString: Untagged
@@ -6233,9 +6325,9 @@ RectTransform:
   - {fileID: 8752354329258887419}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -100, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6664579188410963816
@@ -6320,13 +6412,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6339,7 +6431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8083599690781240967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -6347,6 +6439,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 5219944473591852530}
   inventoryManager: {fileID: 0}
+--- !u!114 &7276962370762807167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083599690781240967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 4
+  icon: {fileID: -1435901459259225544, guid: edaf043ab8b0fe74e9bf71524f458453, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &8216446986569343206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,9 +6763,9 @@ RectTransform:
   - {fileID: 136045194912334486}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -550, y: -110}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -550, y: 303}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7568090535414408108
@@ -6780,6 +6889,7 @@ GameObject:
   - component: {fileID: 362896186033862192}
   - component: {fileID: 2524335594641587387}
   - component: {fileID: 223870569102179005}
+  - component: {fileID: 7723758563186423103}
   m_Layer: 5
   m_Name: InventoryToggleButton1.0)
   m_TagString: Untagged
@@ -6802,9 +6912,9 @@ RectTransform:
   - {fileID: 2794375500621980097}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -550, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -550, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5889595819479115469
@@ -6828,7 +6938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 0.047058824}
+  m_Color: {r: 0.76862746, g: 0.76862746, b: 0.76862746, a: 0.047058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6890,12 +7000,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6908,7 +7018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8393445566798051897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -6916,6 +7026,23 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 7998393187347466930}
   inventoryManager: {fileID: 0}
+--- !u!114 &7723758563186423103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393445566798051897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 0
+  icon: {fileID: 7293598183456022363, guid: aa4e1720a1fc90f47bfb9b375eed012c, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}
 --- !u!1 &8418965587767556906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6927,7 +7054,6 @@ GameObject:
   - component: {fileID: 7521318484370087574}
   - component: {fileID: 1297628282997241165}
   - component: {fileID: 4194903200681894402}
-  - component: {fileID: 4979717357103493630}
   - component: {fileID: 6488249502073099178}
   - component: {fileID: 1267466706921373599}
   - component: {fileID: 3157106121717809624}
@@ -6976,10 +7102,10 @@ RectTransform:
   - {fileID: 7726735972568334121}
   m_Father: {fileID: 9012850280258896710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1520, y: 754}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -14.273132}
+  m_SizeDelta: {x: -400, y: 926.546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1297628282997241165
 CanvasRenderer:
@@ -7019,48 +7145,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4979717357103493630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8418965587767556906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 7909271829641425946}
-  m_Horizontal: 1
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 9202540582285851694}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
-  m_HorizontalScrollbarSpacing: -3
-  m_VerticalScrollbarSpacing: 10
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6488249502073099178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7335,6 +7419,7 @@ MonoBehaviour:
   BarreTransform: {fileID: 4202620452473107152}
   BarreImage: {fileID: 1081560476678586183}
   BarreColor: {r: 0.40000004, g: 0.7137255, b: 0.8196079, a: 0}
+  value: 100
   HeightBarre: 100
 --- !u!1 &8524134334939539082
 GameObject:
@@ -7563,6 +7648,7 @@ MonoBehaviour:
   BarreTransform: {fileID: 1789410113207069725}
   BarreImage: {fileID: 417405808140401406}
   BarreColor: {r: 0.7137255, g: 0.058823533, b: 0.058823533, a: 0}
+  value: 100
   HeightBarre: 100
 --- !u!1 &8603709233076284916
 GameObject:
@@ -7949,7 +8035,17 @@ MonoBehaviour:
   iron: 0
   gold: 0
   haveShovel: 0
+  Apple: 0
+  Banana: 0
+  Strawberry: 0
+  Raspberry: 0
+  Cherry: 0
+  Avocado: 0
+  Wheat: 0
+  Lemon: 0
   shovelImage: {fileID: 4831531382205848617}
+  nonIcon: {fileID: 21300000, guid: 9de51b1779a3fda49a21a52bcba6daad, type: 3}
+  playerAttack: {fileID: 2167782578271041820}
 --- !u!82 &4281087027114978392
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8268,9 +8364,9 @@ RectTransform:
   - {fileID: 3007209381520604848}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -550, y: -606}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -550, y: -193}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &422579073202565325
@@ -8416,10 +8512,10 @@ RectTransform:
   - {fileID: 7909271829641425946}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -17}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -760, y: 413}
+  m_SizeDelta: {x: 1520, y: 809}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5330427132521105251
 CanvasRenderer:
@@ -8755,9 +8851,9 @@ RectTransform:
   - {fileID: 6511766068237921348}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -350, y: -110}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -350, y: 303}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8338355674645928866
@@ -8881,6 +8977,7 @@ GameObject:
   - component: {fileID: 7923635044454727651}
   - component: {fileID: 956339041513839464}
   - component: {fileID: 5200935634085900774}
+  - component: {fileID: 7984196317014739721}
   m_Layer: 5
   m_Name: InventoryToggleButton1.1)
   m_TagString: Untagged
@@ -8903,9 +9000,9 @@ RectTransform:
   - {fileID: 8478005997822960026}
   m_Father: {fileID: 7521318484370087574}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -400, y: -310}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -400, y: 103}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3897923392570886290
@@ -8990,13 +9087,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 7941256785345018460}
+        m_TargetAssemblyTypeName: OthersSlotU, Assembly-CSharp
+        m_MethodName: Consom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9009,7 +9106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9166047677248746561}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77ffa583db5e4a544a4fa6f5e0d9f424, type: 3}
   m_Name: 
@@ -9017,3 +9114,20 @@ MonoBehaviour:
   icon: {fileID: -2067898546876541913, guid: 4cf350e551bb3114cb694a3e1624426e, type: 3}
   quantityText: {fileID: 3244506962875427695}
   inventoryManager: {fileID: 0}
+--- !u!114 &7984196317014739721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166047677248746561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadd0ad92cba32447ba660b43b599757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitType: 5
+  icon: {fileID: -7771451058699622663, guid: 1f71ae43a5e1eef4fac67ff8de5d932a, type: 3}
+  quantityText: {fileID: 0}
+  inventoryManager: {fileID: 6488249502073099178}
+  inventoryBackPack: {fileID: 4976630259937955125}

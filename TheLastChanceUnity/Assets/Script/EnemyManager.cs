@@ -158,7 +158,7 @@ public class EnemyManager : MonoBehaviour
 
     private IEnumerator LoopForEnemiToPlayer()
     {
-        yield return new WaitForSeconds(6f + Random.Range(0,5));
+        yield return new WaitForSeconds(12f + Random.Range(0,7));
         var pls = GameObject.FindGameObjectsWithTag("Player");
         if (pls.Count() > 0) InstantiateEnemyToPlayer(pls[Random.Range(0, pls.Count() - 1)].GetComponent<Transform>());
         LoopForEnemiToPlayer();
