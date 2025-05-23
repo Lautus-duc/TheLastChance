@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75038ca693c52944a8d57c8e7042143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemTypesList: 
   haveWood: 0
+  listOfFood: 0100000000000000

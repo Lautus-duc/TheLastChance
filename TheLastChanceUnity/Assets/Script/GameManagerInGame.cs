@@ -46,6 +46,7 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     private bool playerAlreadyInstantiated = false;
     public GameObject playerInstanciate;
     private int NumberOfPlayer = 0;
+    private bool canInstanciate = true;
 
 
 
@@ -64,8 +65,13 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsConnectedAndReady && !playerAlreadyInstantiated)
         {
+            while (!canInstanciate)
+            {
+
+            }
             InstantiatePlayer();
             playerAlreadyInstantiated = true;
+            NumberOfPlayer = 0;
         }
     }
 
@@ -107,6 +113,7 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
 
     private void InstantiatePlayer()
     {
+        canInstanciate = false;
         Debug.Log($"Instantiating player for {PhotonNetwork.NickName}");
 
         playerInstanciate = PhotonNetwork.Instantiate(playerPrefab.name, SpawnPoint.position, Quaternion.identity);
@@ -116,6 +123,8 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
 
         playerFightScript = playerInstanciate.GetComponent<PlayerFight>();
         playerFightScript.gameManager = this;
+        StartCoroutine(WaitTheNextSpawn());
+        canInstanciate = true;
     }
 
     // PlayerDeath
@@ -146,8 +155,13 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
     {
         PlaySoundRespawn();
         yield return new WaitForSeconds(6.4f);
+        while (!canInstanciate)
+        {
+            
+        }
         InstantiatePlayer();
         SpawnParticle();
+        NumberOfPlayer = 0;
     }
 
 
@@ -191,6 +205,11 @@ public class GameManagerInGame : MonoBehaviourPunCallbacks
             globalLight2DScript.SwitchToDay();
             tilemapRanderScript.SwitchToDay();
         }
+    }
+
+    IEnumerator WaitTheNextSpawn()
+    {
+        yield return new WaitForSeconds(1f);
     }
 
     public int NextNPforPlayer()

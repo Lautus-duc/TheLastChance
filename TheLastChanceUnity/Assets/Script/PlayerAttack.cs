@@ -1,6 +1,8 @@
 using UnityEngine;
 using Photon.Pun;
 using System.Linq;
+using System.Collections;
+using UnityEditor.Rendering;
 
 public class PlayerAttack : MonoBehaviourPun
 {
@@ -9,7 +11,9 @@ public class PlayerAttack : MonoBehaviourPun
 
     [SerializeField]
     private bool isAttacking = false;
-
+    [SerializeField]
+    float timeToSwallow = 3f;
+    bool canEat = true;
     private float timeToAct = 0.25f;
     private float timer = 0;
     [SerializeField]
@@ -21,7 +25,7 @@ public class PlayerAttack : MonoBehaviourPun
     private GameManagerInGame gameManager;
     float MaxHunger = 100;
     float Hunger;
-    bool HaveShovel {get => GetComponent<InventoryBackPack>().HaveShovel;}
+    bool HaveShovel { get => GetComponent<InventoryBackPack>().HaveShovel; }
     [SerializeField]
     InventoryBackPack inventoryBackPack;
 
@@ -44,9 +48,8 @@ public class PlayerAttack : MonoBehaviourPun
         if (!photonView.IsMine || !playerMouvement.isHere) return;
         if (Input.GetMouseButtonDown(0) && playerMouvement.isHere)
         {
-            Debug.Log(1);
             Attack();
-            Hunger -= 2;
+            Hunger -= 0.75f;
             if (Hunger <= 0)
             {
                 Hunger = 0;
@@ -66,7 +69,7 @@ public class PlayerAttack : MonoBehaviourPun
             {
                 DigWithoutShovel();
             }
-            Hunger -= 1;
+            Hunger -= 0.5f;
             if (Hunger <= 0)
             {
                 Hunger = 0;
@@ -74,6 +77,14 @@ public class PlayerAttack : MonoBehaviourPun
                 starveToDeath();
             }
             HungerBarre.ChangeBarre(Hunger, MaxHunger);
+        }
+        if (Input.GetKey(KeyCode.E) && canEat && playerMouvement.isHere)
+        {
+            canEat = false;
+            inventoryBackPack.ConsomFruit();
+            Hunger += 6;
+            HungerBarre.ChangeBarre(Hunger, MaxHunger);
+            StartCoroutine(CanEat());
         }
 
         if (isAttacking && playerMouvement.isHere)
@@ -106,7 +117,7 @@ public class PlayerAttack : MonoBehaviourPun
     private void DigWithoutShovel()
     {
         Vector3 pos = GetComponents<Transform>().First().position;
-        Vector3 vector3 = new Vector3(pos.x, pos.y-1, 1f);
+        Vector3 vector3 = new Vector3(pos.x, pos.y - 1, 1f);
         var particle = Instantiate(DigParticle, vector3, Quaternion.identity);
         float i = Random.Range(0f, 100.0f);
         if (i < 80.0f)
@@ -116,7 +127,7 @@ public class PlayerAttack : MonoBehaviourPun
         else
         {
             Debug.Log("Stone");
-            inventoryBackPack.Stone+=1;
+            inventoryBackPack.Stone += 1;
         }
         Destroy(particle, 1f);
     }
@@ -124,7 +135,7 @@ public class PlayerAttack : MonoBehaviourPun
     private void DigWithShovel()
     {
         Vector3 pos = GetComponents<Transform>().First().position;
-        Vector3 vector3 = new Vector3(pos.x, pos.y-1, 1f);
+        Vector3 vector3 = new Vector3(pos.x, pos.y - 1, 1f);
         var particle = Instantiate(DigParticle, vector3, Quaternion.identity);
         float i = Random.Range(0f, 100.0f);
         if (i < 40.0f)
@@ -142,5 +153,11 @@ public class PlayerAttack : MonoBehaviourPun
             inventoryBackPack.Iron += 1;
         }
         Destroy(particle, 2f);
+    }
+
+    IEnumerator CanEat()
+    {
+        yield return new WaitForSeconds(timeToSwallow);
+        canEat = true;
     }
 }

@@ -9,9 +9,8 @@ namespace GeneralEnumList
     public enum CraftObjectType
     {
         Wood,
-        Metal,
+        Iron,
         Gold,
-        Sand,
         Stone
     }
 

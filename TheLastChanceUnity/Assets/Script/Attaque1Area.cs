@@ -18,7 +18,10 @@ public class Attaque1Area : MonoBehaviour
         if (collider.GetComponent<EnemyStat>() != null)
         {
             EnemyStat enemyStat = collider.GetComponent<EnemyStat>();
-            enemyStat.RecevoirDegat(damage);
+            if (enemyStat.RecevoirDegat(damage)!=false)
+            {
+                inventoryBackPack.Gold += Random.Range(0, 2);
+            }
         }
         else if (collider.GetComponent<CrachObjective>() != null)
         {
@@ -27,11 +30,12 @@ public class Attaque1Area : MonoBehaviour
         else if (collider.GetComponent<Vegetation>() != null)
         {
             PlaySoundWood();
-            if (collider.GetComponent<Vegetation>().IsHit())
+            (bool b, var fruit) = collider.GetComponent<Vegetation>().IsHit();
+            if (b)
             {
                 inventoryBackPack.Wood += 1;
             }
-
+            inventoryBackPack.AddFruit(fruit);
         }
         else if (collider.tag == "Crafter")
         {

@@ -165,3 +165,4 @@ MonoBehaviour:
   Rocket: {fileID: 0}
   Rocket2: {fileID: -666232944909175049, guid: 1806a6ab3eab5f441b8a6f70aa8ea47e, type: 3}
   Rocket3: {fileID: -7545288584465554673, guid: 59ec7c63b980c0d4ba69e464e07b10a1, type: 3}
+  embers: 500

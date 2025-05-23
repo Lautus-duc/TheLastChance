@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FireCamp : MonoBehaviour
 {
+    [SerializeField]
     private GameManagerInGame gameManager;
     [SerializeField]
     private Transform Rocket1Instanciate;
@@ -16,15 +17,16 @@ public class FireCamp : MonoBehaviour
     [SerializeField]
     private float embers = 500;
 
-    private int Part = 1;
+    private int Part = 0;
 
     int[][] checkers;
 
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("PlayerGameManager").GetComponent<GameManagerInGame>();
         checkers = new int[3][];
-        checkers[0] = new int[]{50,20,0,1,0,1};
-        checkers[1] = new int[]{50,15,4,1,1,2};
+        checkers[0] = new int[]{50,20,3,1,0,1};
+        checkers[1] = new int[]{50,15,7,1,1,2};
         checkers[2] = new int[]{50,0,10,1,1,3};
     }
 
@@ -46,7 +48,11 @@ public class FireCamp : MonoBehaviour
             ironCheck -= t.Iron;
             shovelCheck = shovelCheck || t.HaveShovel;
         }
-        if (woodCheck <= 0 && stoneCheck <= 0 && goldCheck <= 0 && ironCheck <= 0 && 3-gameManager.numberOfObjectives>=electronicalCheck)
+        if (woodCheck <= 0
+        && stoneCheck <= 0
+        && goldCheck <= 0
+        && ironCheck <= 0
+        && 3 - gameManager.numberOfObjectives >= electronicalCheck)
         {
             woodCheck = checkers[Part][0] * nbOfPlayer;
             stoneCheck = checkers[Part][1] * nbOfPlayer;
@@ -102,7 +108,7 @@ public class FireCamp : MonoBehaviour
             }
             if (Part == 0)
             {
-                Rocket = Instantiate(Rocket1Instanciate,new Vector3(0,4),Quaternion.identity).gameObject;
+                Rocket = Instantiate(Rocket1Instanciate, new Vector3(4, 0), Quaternion.identity).gameObject;
             }
             else if (Part == 1)
             {
@@ -111,6 +117,7 @@ public class FireCamp : MonoBehaviour
             else
             {
                 Rocket.GetComponent<SpriteRenderer>().sprite = Rocket3;
+                gameManager.TheEndOfGame();
             }
             Part += 1;
             return true;

@@ -14,6 +14,7 @@ public class PlayerBarre : MonoBehaviour
 
     public void ChangeBarre(float newValue, float maxValue)
     {
+        if (newValue > maxValue) newValue = maxValue;
         float valueActual = newValue / maxValue;
         BarreTransform.localScale = new Vector3(valueActual, BarreTransform.localScale.y, BarreTransform.localScale.z);
     }

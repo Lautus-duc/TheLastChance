@@ -40,13 +40,16 @@ public class EnemyStat : MonoBehaviour
     }
 
 
-    public void RecevoirDegat(float degat){
+    public bool RecevoirDegat(float degat)
+    {
         PV -= degat;
         if (!IsAlive)
         {
             enemyManager.ParticleEnemyDeath(GetComponent<Transform>());
             Destroy(gameObject);
+            return true;
         }
+        return false;
     }
 
     void Update()

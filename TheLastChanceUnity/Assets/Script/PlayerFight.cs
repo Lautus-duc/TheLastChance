@@ -12,7 +12,7 @@ public class PlayerFight : PlayerStats
     {
         gameManager = GameObject.FindGameObjectWithTag("PlayerGameManager").GetComponent<GameManagerInGame>();
         NP = gameManager.NextNPforPlayer();
-        if (NP == 2)
+        if (NP == 2) // Ceci est la uniquement pour suprimer les doublons créé par Proton
         {
             PhotonNetwork.Destroy(gameObject); 
         }

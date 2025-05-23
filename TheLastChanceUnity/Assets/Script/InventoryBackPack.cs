@@ -1,5 +1,8 @@
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Collections.Generic;
+using System.Linq;
+using GeneralEnumList;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryBackPack : MonoBehaviour
 {
@@ -14,6 +17,37 @@ public class InventoryBackPack : MonoBehaviour
     int gold;
     [SerializeField]
     bool haveShovel = false;
+    [SerializeField]
+    public Dictionary<FruitType, int> listOfFruit = new Dictionary<FruitType, int>();
+    [SerializeField]
+    Image shovelImage;
+
+    public void AddFruit(FruitType fruitType)
+    {
+        Debug.Log(fruitType);
+        if (!listOfFruit.ContainsKey(fruitType)) listOfFruit[fruitType] = 1;
+        else listOfFruit[fruitType] += 1;
+    }
+
+    public bool ConsomFruit(FruitType fruitType)
+    {
+        if (listOfFruit.ContainsKey(fruitType) && listOfFruit[fruitType] > 0)
+        {
+            listOfFruit[fruitType] -= 1;
+            if (listOfFruit[fruitType] == 0) listOfFruit.Remove(fruitType);
+            return true;
+        }
+        else return false;
+    }
+    public bool ConsomFruit()
+    {
+        if (listOfFruit.Count>0)
+        {
+            ConsomFruit(listOfFruit.First(x=>x.Value>0).Key);
+            return true;
+        }
+        else return false;
+    }
 
     public int Wood
     {
@@ -50,5 +84,6 @@ public class InventoryBackPack : MonoBehaviour
     private void AddShovel()
     {
         haveShovel = true;
+        shovelImage.enabled = true;
     }
 }
